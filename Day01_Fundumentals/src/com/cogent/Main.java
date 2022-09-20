@@ -3,7 +3,7 @@ package com.cogent;
 /*
  * @author 		Vadim KURILKO
  * @date		
- * @description	
+ * @description	Practice
  */
 public class Main {
 	public static void main(String[] args) {
