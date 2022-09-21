@@ -14,10 +14,10 @@ public class FindGreaterNumber {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int a = 10, b = 20;
-		char res = ' ';
-		if (a > b) res = 'a';
-		else res = 'b';
+		int a = 10, b = 10;
+		String res = "none";
+		if (a > b) res = "a";
+		if (a < b) res = "b";
 		System.out.println("The greater number is " + res);
 	}
 
