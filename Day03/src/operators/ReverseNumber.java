@@ -14,7 +14,8 @@ public class ReverseNumber {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int num = 123;
+
+		int num = 123456;
 		int res = 0;
 		int rem = 0;
 		while (num > 0) {
@@ -23,6 +24,7 @@ public class ReverseNumber {
 			num /= 10;
 		}
 		System.out.println(res);
+
 	}
 
 }
