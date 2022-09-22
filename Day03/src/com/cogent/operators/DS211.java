@@ -1,7 +1,7 @@
 /**
  * 
  */
-package operators;
+package com.cogent.operators;
 
 import java.util.Scanner;
 
