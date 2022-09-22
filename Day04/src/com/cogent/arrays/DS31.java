@@ -14,8 +14,8 @@ class DS31 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] array = { 1, 11, 22, 33, 44, 55, 66, 77, 88, 99, 0 };
-		int element = 22;
+		int[] array = { 132, 4536, 45, 654, 7658, 9999, 102 };
+		int element = 45;
 		for (int i = 0; i < array.length; i++)
 			if (element == array[i]) {
 				System.out.println(element + " is in the array");
