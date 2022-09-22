@@ -8,12 +8,12 @@ import java.util.Arrays;
 /**
  * @author dick
  *
- * 22 сент. 2022 г.
+ *         22 сент. 2022 г.
  */
 class DS33 {
 
 	/**
-	 * @param args
+	 * DS3.3.WAP to Sort an Array
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
