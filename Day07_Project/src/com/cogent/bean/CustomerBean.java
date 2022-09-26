@@ -10,13 +10,29 @@ package com.cogent.bean;
  */
 public class CustomerBean {
 
-	/**
-	 * 
-	 */
+	private long customerId;
+	private String customerName;
+	
+	public long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
 	public CustomerBean() {
 		// TODO Auto-generated constructor stub
-		long customerId;
-		String customerName;
+
+		
 	}
 
 }
