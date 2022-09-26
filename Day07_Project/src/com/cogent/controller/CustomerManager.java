@@ -41,13 +41,14 @@ public class CustomerManager {
 				addCustomer();
 				break;
 			case "2":
-				System.out.println("Selected menu option " + input);
+				cRepo.viewAllCustomer();
 				break;
-			case "3":
-				System.out.println("Selected menu option " + input);
+			case "3": 
+				System.out.println("Enter Customer ID ");
+				cRepo.searchCustomerById(scan.nextLong());
 				break;
 			case "4":
-				System.out.println("Selected menu option " + input);
+
 				break;
 			}
 
@@ -60,7 +61,7 @@ public class CustomerManager {
 	 */
 	private static void addCustomer() {
 		// TODO Auto-generated method stub
-		String in = " ";
+		String in = "Y";
 		do {
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Enter Cutomer ID ");
@@ -69,7 +70,7 @@ public class CustomerManager {
 			scan.nextLine();
 			String name = scan.nextLine();
 			cRepo.addCustomer(new CustomerBean(id, name));
-			System.out.println("Selected Y or N");
+			System.out.println("Add another? Y or N");
 			in = scan.nextLine();
 
 		} while (!in.equals("N"));
