@@ -15,6 +15,12 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		int i = 1000;
+		byte b = (byte) i;
+		System.out.println(b);
+
+		
 		int[] arr = {1, 2};
 		String s = "myString";
 		System.out.println(s);
