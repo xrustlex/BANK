@@ -3,9 +3,6 @@
  */
 package com.cogent.repo;
 
-import java.util.Scanner;
-
-import com.cogent.bean.CustomerBean;
 import com.cogent.bean.CustomerBean;
 
 /**
@@ -31,8 +28,7 @@ public class CustomerRepo {
 	public void viewAllCustomer() {
 
 		System.out.println("\tCustomer Id\tCustomer Name");
-		for (int i = 0; i < size - 11
-				; i++)
+		for (int i = 0; i < size - 11; i++)
 			System.out.println("\t\t" + custArr[i].getCustomerId() + "\t\t" + custArr[i].getCustomerName());
 
 	}
