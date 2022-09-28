@@ -8,7 +8,7 @@ package com.cogent.bean;
  *
  * 28 сент. 2022 г.
  */
-public class EmpoyeeBean {
+public class EmployeeBean {
 	
 	private int employeeAge;
 	private long employeeId;
@@ -19,11 +19,11 @@ public class EmpoyeeBean {
 	String employeeCity;
 	String employeeCountry;
 	
-	public EmpoyeeBean() {
+	public EmployeeBean() {
 		super();
 	}
 
-	public EmpoyeeBean(int employeeAge, long employeeId, String employeeFirstName, String employeeLastName,
+	public EmployeeBean(int employeeAge, long employeeId, String employeeFirstName, String employeeLastName,
 			String employeeEmail, boolean employeeIsMarried, String employeeCity, String employeeCountry) {
 		this.employeeAge = employeeAge;
 		this.employeeId = employeeId;
