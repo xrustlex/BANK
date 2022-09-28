@@ -2,7 +2,7 @@ import java.util.List;
 
 import com.cogent.bean.BookBean;
 
-public class BookRepoImpl implements BookService {
+public class BookRepoImpl implements BookRepo {
 
 	@Override
 	public void addBook(BookBean bookBean) {
@@ -34,5 +34,5 @@ public class BookRepoImpl implements BookService {
 		return null;
 	}
 	
-	
+
 }
