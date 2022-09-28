@@ -1,7 +1,10 @@
+package com.cogent.service;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.cogent.bean.BookBean;
+import com.cogent.repo.BookRepo;
+import com.cogent.repo.BookRepoImpl;
 
 public class BookServiceImpl implements BookService {
 
