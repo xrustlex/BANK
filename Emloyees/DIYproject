@@ -1,0 +1,28 @@
+
+****
+DIY
+**********************************************************
+Crud Operation using Layered Arcitechture with Arraylist
+**********************************************************
+EmployeeBean
+-----------------------
+employeeId-long
+employeeFname-String
+employeeLname-String
+employeeEmail-String
+employeeAge- int
+employeeIsMarried-boolean
+employeeCity- String
+employeeCountry- String
+
+
+
+Functionality to be implemented
+
+1. Add new Employee
+2. View All Employee
+3. Find employee by Id
+4. Delete Employee by Id
+5. Find the youngest Employee
+6. Display All employee from country India
+8. Display All employee from country India and city Bangalore

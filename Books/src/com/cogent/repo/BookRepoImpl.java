@@ -11,7 +11,7 @@ public class BookRepoImpl implements BookRepo {
 	@Override
 	public void addBook(BookBean bookBean) {
 		// TODO Auto-generated method stub
-		
+		books.add(bookBean);
 	}
 
 	@Override
