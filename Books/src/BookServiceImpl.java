@@ -5,37 +5,38 @@ import com.cogent.bean.BookBean;
 
 public class BookServiceImpl implements BookService {
 
-	List<BookBean> books = new ArrayList<>();
+	BookRepo bookRepo = new BookRepoImpl();
 
 	@Override
 	public void addBook(BookBean bookBean) {
 
-		books.add(bookBean);
+		bookRepo.addBook(bookBean);
 
 	}
 
 	@Override
 	public void deleteBookById(int bookId) {
-		// TODO Auto-generated method stub
-		
+
+		bookRepo.deleteBookById(bookId);
 	}
 
 	@Override
 	public BookBean findBookById(int bookId) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return bookRepo.findBookById(bookId);
 	}
 
 	@Override
 	public BookBean findBookByAuthor(String author) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return bookRepo.findBookByAuthor(author);
 	}
 
 	@Override
 	public List<BookBean> findBookWithPriceRange(double minPrice, double maxPrice) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return bookRepo.findBookWithPriceRange(minPrice, maxPrice);
+		
 	}
 
 }
