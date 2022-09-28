@@ -8,19 +8,18 @@ package com.cogent;
  *
  *         28 сент. 2022 г.
  */
-public class Main {
+public class PlayerManager {
 
-	/**
-	 * @param args
-	 */
-	static {
-		System.out.println("Static");
+	void excercise(Players player) {
+
+		player.excercise();
 
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Main");
 		
+		new PlayerManager().excercise(new GolfPlayer());
+
 	}
 
 }
