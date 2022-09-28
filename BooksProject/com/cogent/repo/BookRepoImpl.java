@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.cogent.repo;
 
 import java.util.ArrayList;
@@ -8,11 +5,6 @@ import java.util.List;
 
 import com.cogent.bean.BookBean;
 
-/**
- * @author Jayant Surya
- * @date: Sep 28, 2022
- * 
- */
 public class BookRepoImpl implements BookRepo {
 
 	//Repository- Database
