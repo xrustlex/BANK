@@ -1,0 +1,50 @@
+1. Create Project
+
+2. Create required packages
+
+    com.cogent.bean
+	com.cogent.client
+	com.cogent.controller
+	com.cogent.repo
+	com.cogent.service
+	
+3. Create BookBean inside com.cogent.bean package and add below fields
+
+    private int bookId;
+	private String bookTitle;
+	private String bookAuthor;
+	private double price;
+	
+4. Identify the functionality to be implemented then add them in repo layer
+
+    public interface BookRepo {
+    
+		public void addBook(BookBean bookBean);
+		public void deleteBookById(int bookId);
+		public BookBean findBookById(int bookId);
+		public BookBean findBookByAuthor(String author);
+		public List<BookBean> findBookWithPriceRange(double minPrice, double maxPrice);
+	
+	}
+	
+5. Create BookService with Same methods written inside BookRepo
+
+	public interface BookService {
+	
+		public void addBook(BookBean bookBean);
+		public void deleteBookById(int bookId);
+		public BookBean findBookById(int bookId);
+		public BookBean findBookByAuthor(String author);
+		public List<BookBean> findBookWithPriceRange(double minPrice, double maxPrice);
+		
+	}
+	
+6. Write Implementation class for BookService and BookRepo
+
+	BookServiceImpl & BookRepoImpl
+
+
+7. Create ArrayList in BookRepoImpl
+
+
+8. Call all repo layer methods from service layer method
