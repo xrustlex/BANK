@@ -71,7 +71,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 
 	@Override
 	public List<EmployeeBean> findByCity(String country, String city) {
-		// TODO Auto-generated method stub
+
 		List<EmployeeBean> resultsList = new ArrayList<>();
 		for (int i = 0; i < employees.size(); i++)
 			if ((employees.get(i).getEmployeeCountry()) == country && (employees.get(i).getEmployeeCity() == city))
