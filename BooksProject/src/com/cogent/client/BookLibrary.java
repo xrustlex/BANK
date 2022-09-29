@@ -25,12 +25,16 @@ public class BookLibrary {
         // Add New Book
 		bookBean = new BookBean();
 		System.out.print("Enter book Id\t");
+		
 		bookBean.setBookId(scanner.nextInt());
 		System.out.print("Enter Book title\t");
+		
 		bookBean.setBookTitle(scanner.next());
 		System.out.print("Enter Book Author\t");
+				
 		bookBean.setBookAuthor(scanner.next());
 		System.out.print("Enter Book Price\t");
+		
 		bookBean.setPrice(scanner.nextDouble());
 		bookService.addBook(bookBean);
 
@@ -43,6 +47,5 @@ public class BookLibrary {
 		} else {
 			System.out.println("Book not found!");
 		}
-
 	}
 }
