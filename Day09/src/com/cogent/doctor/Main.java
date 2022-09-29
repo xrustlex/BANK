@@ -27,7 +27,7 @@ class Doctor {
 
 	@Override
 	public String toString() {
-		return "Doctor [drId=" + drId + ", drSalary=" + drSalary + ", drName=" + drName + ", drSpec=" + drSpec + "]";
+		return "Doctor [drId = " + drId + ", drSalary = " + drSalary + ", drName = " + drName + ", drSpec = " + drSpec + "]";
 	}
 
 	@Override
@@ -53,8 +53,19 @@ public class Main {
 		Doctor dr1 = new Doctor(101, 100000.00, "Dre", "Music");
 		Doctor dr2 = new Doctor(102, 99000.00, "Watson", "Cinema");
 		Doctor dr3 = new Doctor(102, 99000.00, "Watson", "Cinema");
+		Doctor dr4 = dr3;
+		
 		System.out.println(dr1.equals(dr2));
 		System.out.println(dr3.equals(dr2));
+		System.out.println(dr4.equals(dr3));
+		System.out.println(dr4.equals(dr1));
+		
+		System.out.println();
+
+		System.out.println(dr1.toString());
+		System.out.println(dr2.toString());
+		System.out.println(dr3.toString());
+		System.out.println(dr4.toString());
 	}
 
 }
