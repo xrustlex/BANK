@@ -21,6 +21,6 @@ public interface EmployeeRepo {
 	public void deleteById(long id);
 	public EmployeeBean findYoungest();
 	public List<EmployeeBean> findByCountry(String country);
-	public List<EmployeeBean> findByCity(String City);
-	
+	public List<EmployeeBean> findByCity(String country, String city);
+
 }

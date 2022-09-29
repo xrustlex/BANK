@@ -11,7 +11,7 @@ import com.cogent.bean.EmployeeBean;
 /**
  * @author dick
  *
- *         28 сент. 2022 г.
+ * @date: 28 сент. 2022 г.
  */
 public class EmployeeRepoImpl implements EmployeeRepo {
 
@@ -24,14 +24,14 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 
 	@Override
 	public void viewAllEmloyees() {
-		// TODO Auto-generated method stub
+
 		for (int i = 0; i < employees.size(); i++)
 			employees.get(i).toString();
 	}
 
 	@Override
 	public EmployeeBean findById(long id) {
-		// TODO Auto-generated method stub
+
 		for (int i = 0; i < employees.size(); i++)
 			if (employees.get(i).getEmployeeId() == id)
 				return employees.get(i);
@@ -40,26 +40,43 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 
 	@Override
 	public void deleteById(long id) {
-		// TODO Auto-generated method stub
 
+		for (int i = 0; i < employees.size(); i++)
+			if (employees.get(i).getEmployeeId() == id)
+				employees.remove(i);
 	}
 
 	@Override
 	public EmployeeBean findYoungest() {
-		// TODO Auto-generated method stub
-		return null;
+
+		int index = 0;
+		int minAge = 255;
+		for (int i = 0; i < employees.size(); i++)
+			if (employees.get(i).getEmployeeAge() < minAge) {
+				minAge = employees.get(i).getEmployeeAge();
+				index = i;
+			}
+		return employees.get(index);
 	}
 
 	@Override
 	public List<EmployeeBean> findByCountry(String country) {
-		// TODO Auto-generated method stub
-		return null;
+
+		List<EmployeeBean> resultsList = new ArrayList<>();
+		for (int i = 0; i < employees.size(); i++)
+			if (employees.get(i).getEmployeeCountry() == country)
+				resultsList.add(employees.get(i));
+		return resultsList;
 	}
 
 	@Override
-	public List<EmployeeBean> findByCity(String City) {
+	public List<EmployeeBean> findByCity(String country, String city) {
 		// TODO Auto-generated method stub
-		return null;
+		List<EmployeeBean> resultsList = new ArrayList<>();
+		for (int i = 0; i < employees.size(); i++)
+			if ((employees.get(i).getEmployeeCountry()) == country && (employees.get(i).getEmployeeCity() == city))
+				resultsList.add(employees.get(i));
+		return resultsList;
 	}
 
 }

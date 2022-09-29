@@ -25,4 +25,5 @@ Functionality to be implemented
 4. Delete Employee by Id
 5. Find the youngest Employee
 6. Display All employee from country India
-8. Display All employee from country India and city Bangalore
+7. Display All employee from country India
+	and city Bangalore
