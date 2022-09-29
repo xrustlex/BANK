@@ -14,12 +14,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.print("PLEASE ENTER YOUR NAME\t");
 
-		Scanner scan = new Scanner(System.in);
-		String name = scan.nextLine();
+		//System.out.print("PLEASE ENTER YOUR NAME\t");
 
-		System.out.print("YOUR NAME IS\t\t" + name);
+		//Scanner scan = new Scanner(System.in);
+		//String name = scan.nextLine();
+
+		//System.out.print("YOUR NAME IS\t\t" + name);
+		
+		double res = 1.0 / 16;
+		System.out.println(res);
 
 	}
 }
