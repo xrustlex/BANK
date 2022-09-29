@@ -19,11 +19,9 @@ public class BookLibrary {
 	public static void main(String[] args) {
 		
 		BookService bookService = new BookServiceImpl();
-
 		Scanner scanner = new Scanner(System.in);
-
-
 		BookBean bookBean = null;
+		
         // Add New Book
 		bookBean = new BookBean();
 		System.out.print("Enter book Id\t");
@@ -41,8 +39,7 @@ public class BookLibrary {
 		System.out.println("Please enter the book Id");
 		BookBean book = bookService.findBookById(scanner.nextInt());
 		if (book != null) {
-			System.out.println(
-					book.getBookId() + " " + book.getBookTitle() + " " + book.getBookAuthor() + " " + book.getPrice());
+			System.out.println(book.getBookId() + " " + book.getBookTitle() + " " + book.getBookAuthor() + " " + book.getPrice());
 		} else {
 			System.out.println("Book not found!");
 		}
