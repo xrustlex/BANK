@@ -5,6 +5,7 @@ package com.cogent.repo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import com.cogent.bean.EmployeeBean;
 
@@ -50,7 +51,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	public EmployeeBean findYoungest() {
 
 		int index = 0;
-		int minAge = 255;
+		int minAge = Integer.MAX_VALUE;
 		for (int i = 0; i < employees.size(); i++)
 			if (employees.get(i).getEmployeeAge() < minAge) {
 				minAge = employees.get(i).getEmployeeAge();
@@ -77,6 +78,23 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 			if ((employees.get(i).getEmployeeCountry()) == country && (employees.get(i).getEmployeeCity() == city))
 				resultsList.add(employees.get(i));
 		return resultsList;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(employees);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EmployeeRepoImpl other = (EmployeeRepoImpl) obj;
+		return Objects.equals(employees, other.employees);
 	}
 
 }
