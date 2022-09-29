@@ -25,19 +25,23 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	@Override
 	public void viewAllEmloyees() {
 		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < employees.size(); i++)
+			employees.get(i).toString();
 	}
 
 	@Override
 	public EmployeeBean findById(long id) {
 		// TODO Auto-generated method stub
+		for (int i = 0; i < employees.size(); i++)
+			if (employees.get(i).getEmployeeId() == id)
+				return employees.get(i);
 		return null;
 	}
 
 	@Override
 	public void deleteById(long id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
