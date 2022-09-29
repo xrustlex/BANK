@@ -1,11 +1,19 @@
 package com.cogent.bean;
 
+/*
+ * @author	VADIM
+ * @date:	Sep 29, 2022
+ */
 public class BookBean {
 
 	private int bookId;
 	private String bookTitle;
 	private String bookAuthor;
 	private double price;
+
+	public BookBean() {
+		super();
+	}
 
 	public BookBean(int bookId, String bookTitle, String bookAuthor, double price) {
 		super();
@@ -52,5 +60,5 @@ public class BookBean {
 		return "BookBean [bookId=" + bookId + ", bookTitle=" + bookTitle + ", bookAuthor=" + bookAuthor + ", price="
 				+ price + "]";
 	}
-	
+
 }

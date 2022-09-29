@@ -26,13 +26,13 @@ public class BookLibrary {
 		BookBean bookBean = null;
         // Add New Book
 		bookBean = new BookBean();
-		System.out.println("Enter book Id");
+		System.out.print("Enter book Id\t");
 		bookBean.setBookId(scanner.nextInt());
-		System.out.println("Enter Book title");
+		System.out.print("Enter Book title\t");
 		bookBean.setBookTitle(scanner.next());
-		System.out.println("Enter Book Author");
+		System.out.print("Enter Book Author\t");
 		bookBean.setBookAuthor(scanner.next());
-		System.out.println("Enter Book Price");
+		System.out.print("Enter Book Price\t");
 		bookBean.setPrice(scanner.nextDouble());
 		bookService.addBook(bookBean);
 

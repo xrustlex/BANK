@@ -50,10 +50,5 @@ public class BookBean {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	
-	
-	
-	
+		
 }
