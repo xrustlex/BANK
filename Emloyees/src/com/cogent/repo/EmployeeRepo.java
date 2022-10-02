@@ -22,5 +22,5 @@ public interface EmployeeRepo {
 	public EmployeeBean findYoungest();
 	public List<EmployeeBean> findByCountry(String country);
 	public List<EmployeeBean> findByCity(String country, String city);
-
+	
 }

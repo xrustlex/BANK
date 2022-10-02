@@ -6,29 +6,31 @@ package com.cogent.bean;
 /**
  * @author dick
  *
- * 28 сент. 2022 г.
+ *         28 сент. 2022 г.
  */
 public class EmployeeBean {
-	
+
 	private int employeeAge;
 	private long employeeId;
 	private String employeeFirstName;
 	private String employeeLastName;
-	private String employeeEmail;
-	boolean employeeIsMarried;
-	String employeeCity;
-	String employeeCountry;
 	
-	public EmployeeBean() {
-		super();
-	}
+	private String employeeEmail;
+	private boolean employeeIsMarried;
+	private String employeeCity;
+	private String employeeCountry;
 
-	public EmployeeBean(int employeeAge, long employeeId, String employeeFirstName, String employeeLastName,
+	/*
+	 * public EmployeeBean() { super(); }
+	 */
+	public EmployeeBean(long employeeId, int employeeAge, String employeeFirstName, String employeeLastName,
 			String employeeEmail, boolean employeeIsMarried, String employeeCity, String employeeCountry) {
-		this.employeeAge = employeeAge;
+
 		this.employeeId = employeeId;
+		this.employeeAge = employeeAge;
 		this.employeeFirstName = employeeFirstName;
 		this.employeeLastName = employeeLastName;
+
 		this.employeeEmail = employeeEmail;
 		this.employeeIsMarried = employeeIsMarried;
 		this.employeeCity = employeeCity;

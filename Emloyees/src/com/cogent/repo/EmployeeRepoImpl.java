@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Objects;
 
 import com.cogent.bean.EmployeeBean;
+import com.cogent.repo.EmployeeRepoImpl;
+
+import com.cogent.bean.EmployeeBean;
 
 /**
  * @author dick
@@ -78,11 +81,6 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 			if ((employees.get(i).getEmployeeCountry()) == country && (employees.get(i).getEmployeeCity() == city))
 				resultsList.add(employees.get(i));
 		return resultsList;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(employees);
 	}
 
 	@Override
