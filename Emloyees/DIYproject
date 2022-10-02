@@ -1,21 +1,18 @@
-
-****
-DIY
+						*****
+						 DIY
 **********************************************************
-Crud Operation using Layered Arcitechture with Arraylist
+ Crud Operation using Layered Arcitechture with Arraylist
 **********************************************************
 EmployeeBean
 -----------------------
-employeeId-long
-employeeFname-String
-employeeLname-String
-employeeEmail-String
-employeeAge- int
-employeeIsMarried-boolean
-employeeCity- String
-employeeCountry- String
-
-
+long employeeId
+String employeeFname 
+String employeeLname
+String employeeEmail
+int employeeAge
+boolean employeeIsMarried
+String employeeCity
+String employeeCountry
 
 Functionality to be implemented
 
@@ -25,5 +22,4 @@ Functionality to be implemented
 4. Delete Employee by Id
 5. Find the youngest Employee
 6. Display All employee from country India
-7. Display All employee from country India
-		and city Bangalore
+7. 		-||-	and city Bangalore
