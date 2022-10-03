@@ -3,10 +3,9 @@
  */
 package com.cogent.client;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import com.cogent.bean.EmployeeBean;
+import com.cogent.repo.EmployeeRepo;
 import com.cogent.repo.EmployeeRepoImpl;
 
 /**
@@ -15,12 +14,10 @@ import com.cogent.repo.EmployeeRepoImpl;
  *         2 окт. 2022 г.
  */
 public class Main {
-
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub		
+
 		List<EmployeeBean> employees = new ArrayList<>();
 		
 		employees.add(new EmployeeBean(1001, 31, "Adam", "Abrams", "Adam.Abrams@test.com", false, "Arlington", "Andorra"));
@@ -41,6 +38,8 @@ public class Main {
 		for (int i = 0; i < employees.size(); i++) 
 			System.out.println(employees.get(i).toString());
 		
+		
 	}
-
+	
 }
+

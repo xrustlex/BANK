@@ -1,9 +1,17 @@
+
 package com.cogent.test;
 
+import java.util.Arrays;
 
-public interface Main {
+public class Main {
 	
-	//public static int a;
+	static int[] arr = {1, 4, 3, 2, 8, 7, 9, 0, 6, 5, 5, 44, -11, 3498};
+	public static void main (String[] s) {
+		
+		Arrays.sort(arr);
+		for (int e: arr)
+		System.out.print(e+" ");
+		
+	}
 
 }
-

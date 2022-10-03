@@ -1,16 +1,18 @@
-package com.cogent.repo;
+/**
+ * 
+ */
+package com.cogent.service;
 
 import java.util.List;
 
-import com.cogent.bean.EmployeeBean;
 import com.cogent.bean.EmployeeBean;
 
 /**
  * @author dick
  *
- * 28 сент. 2022 г.
+ * 3 окт. 2022 г.
  */
-public interface EmployeeRepo {
+public interface EmployeeService {
 	
 	public void addEmloyee(EmployeeBean employeeBean);
 	public void viewAllEmloyees();

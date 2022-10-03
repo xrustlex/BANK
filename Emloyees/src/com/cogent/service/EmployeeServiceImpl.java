@@ -1,21 +1,23 @@
 /**
  * 
  */
-package com.cogent.repo;
+package com.cogent.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import com.cogent.bean.EmployeeBean;
+import com.cogent.repo.EmployeeRepoImpl;
 
 /**
  * @author dick
  *
- * @date: 28 сент. 2022 г.
+ *         3 окт. 2022 г.
  */
-public class EmployeeRepoImpl implements EmployeeRepo {
-
-	public List<EmployeeBean> employees = new ArrayList<>();
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	List<EmployeeBean> employees = new ArrayList<>();
 
 	@Override
 	public void addEmloyee(EmployeeBean employeeBean) {
