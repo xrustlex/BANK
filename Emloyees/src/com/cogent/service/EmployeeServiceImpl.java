@@ -3,6 +3,7 @@ package com.cogent.service;
 import java.util.*;
 
 import com.cogent.bean.EmployeeBean;
+import com.cogent.repo.EmployeeRepo;
 import com.cogent.repo.EmployeeRepoImpl;
 
 /**
@@ -11,81 +12,49 @@ import com.cogent.repo.EmployeeRepoImpl;
  *         3 окт. 2022 г.
  */
 public class EmployeeServiceImpl implements EmployeeService {
-	
-	List<EmployeeBean> employees = new ArrayList<>();
 
+	EmployeeRepo employeeRepo = new EmployeeRepoImpl();
 	@Override
 	public void addEmloyee(EmployeeBean employeeBean) {
-		employees.add(employeeBean);
+		// TODO Auto-generated method stub
+		employeeRepo.addEmloyee(employeeBean);
 	}
 
 	@Override
-	public void viewAllEmloyees() {
-
-		for (int i = 0; i < employees.size(); i++)
-			employees.get(i).toString();
+	public List<EmployeeBean> viewAllEmloyees() {
+		// TODO Auto-generated method stub
+		return employeeRepo.viewAllEmloyees();
 	}
 
 	@Override
 	public EmployeeBean findById(long id) {
-
-		for (int i = 0; i < employees.size(); i++)
-			if (employees.get(i).getEmployeeId() == id)
-				return employees.get(i);
-		return null;
+		// TODO Auto-generated method stub
+		return employeeRepo.findById(id);
 	}
 
 	@Override
 	public void deleteById(long id) {
-
-		for (int i = 0; i < employees.size(); i++)
-			if (employees.get(i).getEmployeeId() == id)
-				employees.remove(i);
+		// TODO Auto-generated method stub
+		employeeRepo.deleteById(id);
 	}
 
 	@Override
 	public EmployeeBean findYoungest() {
-
-		int index = 0;
-		int minAge = Integer.MAX_VALUE;
-		for (int i = 0; i < employees.size(); i++)
-			if (employees.get(i).getEmployeeAge() < minAge) {
-				minAge = employees.get(i).getEmployeeAge();
-				index = i;
-			}
-		return employees.get(index);
+		// TODO Auto-generated method stub
+		return employeeRepo.findYoungest();
 	}
 
 	@Override
 	public List<EmployeeBean> findByCountry(String country) {
-
-		List<EmployeeBean> resultsList = new ArrayList<>();
-		for (int i = 0; i < employees.size(); i++)
-			if (employees.get(i).getEmployeeCountry() == country)
-				resultsList.add(employees.get(i));
-		return resultsList;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public List<EmployeeBean> findByCity(String country, String city) {
-
-		List<EmployeeBean> resultsList = new ArrayList<>();
-		for (int i = 0; i < employees.size(); i++)
-			if ((employees.get(i).getEmployeeCountry()) == country && (employees.get(i).getEmployeeCity() == city))
-				resultsList.add(employees.get(i));
-		return resultsList;
+		// TODO Auto-generated method stub
+		return null;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EmployeeRepoImpl other = (EmployeeRepoImpl) obj;
-		return Objects.equals(employees, other.employees);
-	}
-
+	
+	
 }

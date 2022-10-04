@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  *         4 окт. 2022 г.
  */
-public class Main {
+public class Q1 {
 
 	/**
 	 * @param args

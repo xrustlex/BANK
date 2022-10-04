@@ -19,9 +19,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		EmployeeBean employee = new EmployeeBean(1001, 31, "Adam", "Abrams", "Adam.Abrams@test.com", false, "Arlington", "Andorra");
+		EmployeeService employeeService = new EmployeeServiceImpl();
+		employeeService.addEmloyee(employee);
+		
+		List<EmployeeBean> employees = employeeService.viewAllEmloyees();
+		for (EmployeeBean e : employees)
+			System.out.println(e);
 		// TODO Auto-generated method stub
-		List<EmployeeBean> employees = new ArrayList<>();
-
+		//List<EmployeeBean> employees = new ArrayList<>();
+		
+		
+		/*
 		employees.add(
 				new EmployeeBean(1001, 31, "Adam", "Abrams", "Adam.Abrams@test.com", false, "Arlington", "Andorra"));
 		employees.add(new EmployeeBean(1002, 32, "Benjamin", "Burton", "Benjamin.Burton@test.com", true, "Boston",
@@ -47,7 +56,7 @@ public class Main {
 
 		for (int i = 0; i < employees.size(); i++)
 			System.out.println(employees.get(i).toString());
-
+		 */
 	}
 
 }

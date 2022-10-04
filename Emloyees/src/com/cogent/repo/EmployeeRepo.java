@@ -13,7 +13,7 @@ import com.cogent.bean.EmployeeBean;
 public interface EmployeeRepo {
 	
 	public void addEmloyee(EmployeeBean employeeBean);
-	public void viewAllEmloyees();
+	public List<EmployeeBean> viewAllEmloyees();
 	public EmployeeBean findById(long id);
 	public void deleteById(long id);
 	public EmployeeBean findYoungest();

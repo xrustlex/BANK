@@ -10,9 +10,11 @@ package com.cogent.test;
  */
 public interface Testable {
 
+	//Which of these field declarations are legal within the bodv of an intertace?
+	
 	//public static int a;
 	//private final static int b = 0;
-	//final static c = 42;
+	//final static int c = 42;
 	//int d;
 
 }

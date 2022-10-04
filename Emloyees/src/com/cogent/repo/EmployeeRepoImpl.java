@@ -23,10 +23,11 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	}
 
 	@Override
-	public void viewAllEmloyees() {
+	public List<EmployeeBean> viewAllEmloyees() {
 
-		for (int i = 0; i < employees.size(); i++)
-			employees.get(i).toString();
+		return employees;
+		//for (int i = 0; i < employees.size(); i++)
+		//	employees.get(i).toString();
 	}
 
 	@Override
