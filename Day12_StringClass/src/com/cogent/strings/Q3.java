@@ -20,6 +20,7 @@ public class Q3 {
 		String inputString = "";
 		System.out.println("ENTER YOUR STRING");
 		Scanner scanner = new Scanner(System.in);
+			
 	}
-
+	
 }
