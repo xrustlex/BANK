@@ -1,18 +1,28 @@
 
 package com.cogent.test;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
-	
+
 	public static void main(String[] s) {
 
-		int[] arr = { 1, 4, 3, 2, 8, 7, 9, 0, 6, 5, 5, 44, -11, 3498 };
+		String a1 = "111";
+		String a2 = new String("111");
+		String a3 = "111";
+		String a4 = new String("111");
 
-		Arrays.sort(arr);
-		for (int e : arr)
-			System.out.print(e + " ");
-		//System.out.println();
+		String forS = "";
+		String revS = "";
+		
+		Scanner scan = new Scanner(System.in);
+		forS = scan.nextLine();
+		
+		for (int i = forS.length() - 1; i >= 0; i--)
+			revS += forS.charAt(i);
+
+		//System.out.println(forS);
+		System.out.println(revS);
 
 	}
 
