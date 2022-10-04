@@ -47,14 +47,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<EmployeeBean> findByCountry(String country) {
 		// TODO Auto-generated method stub
-		return null;
+		return employeeRepo.findByCountry(country);
 	}
 
 	@Override
 	public List<EmployeeBean> findByCity(String country, String city) {
 		// TODO Auto-generated method stub
-		return null;
+		return employeeRepo.findByCity(country, city);
 	}
-	
 	
 }
