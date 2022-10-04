@@ -5,7 +5,9 @@ package com.cogent.client;
 
 import java.util.*;
 import com.cogent.bean.EmployeeBean;
+import com.cogent.repo.EmployeeRepo;
 import com.cogent.repo.EmployeeRepoImpl;
+import com.cogent.service.EmployeeService;
 import com.cogent.service.EmployeeServiceImpl;
 
 /**
@@ -16,6 +18,7 @@ import com.cogent.service.EmployeeServiceImpl;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		// TODO Auto-generated method stub
 		List<EmployeeBean> employees = new ArrayList<>();
 
@@ -30,7 +33,8 @@ public class Main {
 
 		for (int i = 0; i < employees.size(); i++)
 			System.out.println(employees.get(i).toString());
-
+		
+		//ADD MORE	
 		employees.add(new EmployeeBean(991, 21, "Eric", "Elton", "Eric.Elton@test.com", false, "Enfield", "Egypt"));
 		employees.add(new EmployeeBean(992, 22, "Franklin", "Farewell", "Franklin.Farewell@test.com", true, "Fartown",
 				"France"));
