@@ -11,7 +11,7 @@ import java.util.*;
  *         5 окт. 2022 г.
  */
 
-class Employee implements Comparable {
+class Employee implements Comparable<Employee> {
 
 	private int id;
 	private String name;
@@ -25,6 +25,13 @@ class Employee implements Comparable {
 
 	}
 
+	@Override
+	public int compareTo(Employee o) {
+
+		return name.compareTo(o.getName());
+
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -38,10 +45,8 @@ class Employee implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		Employee o1 = (Employee) o;
-		return name.compareTo(o1.name);
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
 
 }
@@ -59,8 +64,24 @@ public class MainQue2 {
 		 * Employee(994, "David", 29);
 		 */
 		PriorityQueue<Employee> pq = new PriorityQueue<Employee>();
-		pq.add(new Employee(991, "Adam", 2));
+		pq.add(new Employee(991, "Aaron", 26));
+		pq.add(new Employee(992, "Boris", 27));
 
+		System.out.print(pq + "\n");
+		System.out.print(pq.peek());
+		
+		pq.poll();
+		pq.poll();
+		
+		System.out.print(pq + "\n");
+		
+		pq.add(new Employee(993, "Chris", 28));
+		pq.add(new Employee(994, "David", 29));
+		
+		System.out.print(pq + "\n");
+		System.out.print(pq.peek());
+
+		
 	}
 
 }
