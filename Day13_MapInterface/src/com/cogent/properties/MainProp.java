@@ -12,7 +12,7 @@ import java.util.*;
  *
  * 5 окт. 2022 г.
  */
-public class Main {
+public class MainProp {
 
 	/**
 	 * @param args
@@ -24,7 +24,13 @@ public class Main {
 			FileInputStream fis = new FileInputStream(cFile);
 			Properties prop = new Properties();
 			prop.load(fis);
-			System.out.print(prop.toString());
+			System.out.println(prop);
+			System.out.println();
+			System.out.println(prop.getProperty("driver"));
+			System.out.println(prop.getProperty("URL"));
+			System.out.println(prop.getProperty("username"));
+			System.out.println(prop.getProperty("password"));
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
