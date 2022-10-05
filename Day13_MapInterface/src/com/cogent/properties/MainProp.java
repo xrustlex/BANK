@@ -19,7 +19,7 @@ public class MainProp {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		File cFile = new File("/Users/dick/git/cogent/Day13_MapInterface/src/com/cogent/properties/config.properties");
+		File cFile = new File("src/com/cogent/properties/config.properties");
 		try {
 			FileInputStream fis = new FileInputStream(cFile);
 			Properties prop = new Properties();
