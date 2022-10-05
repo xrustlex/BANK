@@ -11,7 +11,7 @@ import java.util.*;
  *         5 окт. 2022 г.
  */
 
-class Employee implements Comparator {
+class Employee implements Comparable {
 
 	private int id;
 	private String name;
@@ -38,9 +38,10 @@ class Employee implements Comparator {
 	}
 
 	@Override
-	public int compare(Object o1, Object o2) {
+	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
-		return 0;
+		Employee o1 = (Employee) o;
+		return name.compareTo(o1.name);
 	}
 
 }
@@ -57,11 +58,8 @@ public class MainQue2 {
 		 * "Boris", 27); Employee e = new Employee(993, "Chris", 28); Employee e = new
 		 * Employee(994, "David", 29);
 		 */
-		PriorityQueue pq = new PriorityQueue();
-		pq.add(new Employee(991, "Adam", 26));
-		pq.add(new Employee(992, "Boris", 27));
-		pq.add(new Employee(993, "Chris", 28));
-		pq.add(new Employee(994, "David", 29));
+		PriorityQueue<Employee> pq = new PriorityQueue<Employee>();
+		pq.add(new Employee(991, "Adam", 2));
 
 	}
 
