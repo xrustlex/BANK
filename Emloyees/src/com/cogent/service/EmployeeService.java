@@ -14,7 +14,7 @@ import com.cogent.bean.EmployeeBean;
  */
 public interface EmployeeService {
 	
-	public void addEmloyee(EmployeeBean employeeBean);
+	public void addEmployee(EmployeeBean employeeBean);
 	public List<EmployeeBean> viewAllEmloyees();
 	public EmployeeBean findById(long id);
 	public void deleteById(long id);

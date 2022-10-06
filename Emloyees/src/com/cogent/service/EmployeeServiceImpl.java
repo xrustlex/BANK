@@ -15,7 +15,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	EmployeeRepo employeeRepo = new EmployeeRepoImpl();
 	@Override
-	public void addEmloyee(EmployeeBean employeeBean) {
+	public void addEmployee(EmployeeBean employeeBean) {
 		// TODO Auto-generated method stub
 		employeeRepo.addEmloyee(employeeBean);
 	}

@@ -1,57 +1,63 @@
-/**
- * 
- */
+
 package com.cogent.client;
 
 import java.util.*;
 import com.cogent.bean.EmployeeBean;
-import com.cogent.repo.EmployeeRepo;
-import com.cogent.repo.EmployeeRepoImpl;
 import com.cogent.service.EmployeeService;
 import com.cogent.service.EmployeeServiceImpl;
 
-/**
- * @author dick
- *
- *         2 окт. 2022 г.
- */
+/* @author	dick
+ * @date:	2 окт. 2022 г.*/
+
+@FunctionalInterface
+interface Displayable {
+
+	void display(EmployeeBean e);
+
+}
+
 public class EmployeeClient {
 
 	public static void main(String[] args) {
-
+		
 		EmployeeService employeeService = new EmployeeServiceImpl();
-		employeeService.addEmloyee(
-				new EmployeeBean(1001, 31, "Adam", "Abrams", "Adam.Abrams@test.com", false, "Arlington", "Andorra"));
-		employeeService.addEmloyee(new EmployeeBean(1002, 32, "Benjamin", "Burton", "Benjamin.Burton@test.com", true,
-				"Boston", "Bermuda"));
-		employeeService.addEmloyee(
-				new EmployeeBean(1003, 33, "Charles", "Calvin", "Charles.Calvin@test.com", false, "Chelsea", "Canada"));
-		employeeService.addEmloyee(
-				new EmployeeBean(1004, 34, "Dennis", "Duncan", "Dennis.Duncan@test.com", true, "Denver", "Denmark"));
+		
+		employeeService.addEmployee(new EmployeeBean(301, 31, "Adam", "Abrams", "Adam.Abrams@test.com", false, "Avon", "Andorra"));;
+		employeeService.addEmployee(new EmployeeBean(302, 32, "Benjamin", "Burton", "Ben.Burton@test.com", true, "Boston", "Bermuda"));
+		employeeService.addEmployee(new EmployeeBean(303, 33, "Charles", "Calvin", "Chuck.Calvin@test.com", false, "Chelsea", "Canada"));
+		employeeService.addEmployee(new EmployeeBean(304, 34, "Dennis", "Duncan", "Den.Duncan@test.com", true, "Denver", "Denmark"));
 
 		List<EmployeeBean> employees = employeeService.viewAllEmloyees();
-		for (EmployeeBean e : employees)
-			System.out.println(e);
-
-		System.out.println();
-
+		//FOR LOOP
+		System.out.println("FOR LOOP:\n");
 		for (int i = 0; i < employees.size(); i++)
 			System.out.println(employees.get(i).getEmployeeId() + "\t" + employees.get(i).getEmployeeFirstName() + " "
 					+ employees.get(i).getEmployeeLastName() + "\t" + employees.get(i).getEmployeeAge() + "\t"
 					+ employees.get(i).getEmployeeEmail() + "\t" + employees.get(i).getEmployeeCity() + "\t"
 					+ employees.get(i).getEmployeeCountry());
+		
+		System.out.println();
+		//FOR EACH LOOP
+		System.out.println("FOR EACH LOOP:\n");
+		for (EmployeeBean e : employees)
+			System.out.println(e);
 
-		employeeService.addEmloyee(
-				new EmployeeBean(991, 21, "Eric", "Elton", "Eric.Elton@test.com", false, "Enfield", "Egypt"));
-		employeeService.addEmloyee(new EmployeeBean(992, 22, "Franklin", "Farewell", "Franklin.Farewell@test.com", true,
-				"Fartown", "France"));
-		employeeService.addEmloyee(
-				new EmployeeBean(993, 23, "George", "Grace", "George.Grace@test.com", false, "Ghostown", "Germany"));
-		employees
-				.add(new EmployeeBean(994, 24, "Helen", "Hooter", "Helen.Hooter@test.com", true, "Hanover", "Hungary"));
-		employeeService.addEmloyee(new EmployeeBean(992, 22, "Franklin", "Farewell", "Franklin.Farewell@test.com", true,
-				"Fartown", "France"));
+		//ADDING MORE TO LIST
+		employeeService.addEmployee(new EmployeeBean(201, 21, "Eric", "Elton", "Eric.Elton@test.com", false, "Enfield", "Egypt"));
+		employeeService.addEmployee(new EmployeeBean(202, 22, "Franklin", "Farewell", "Franklin.Farewell@test.com", true, "Fartown", "France"));
+		employeeService.addEmployee(new EmployeeBean(203, 23, "George", "Grace", "George.Grace@test.com", false, "Ghostown", "Germany"));
+		employeeService.addEmployee(new EmployeeBean(204, 24, "Helen", "Hooter", "Helen.Hooter@test.com", true, "Hanover", "Hungary"));
+		System.out.println();
+		//LAMBDA EXPRESSION
+		System.out.println("LAMBDA EXPRESSION:\n");
+		Displayable d = (e) -> System.out.println(e);
+		for (EmployeeBean e : employees)
+			d.display(e);
+		System.out.println();
+		//List.forEach()
+		System.out.println("LIST.FOREACH():\n");
+		employees.forEach((e) -> System.out.println(e));
 		
 	}
-
+	
 }
