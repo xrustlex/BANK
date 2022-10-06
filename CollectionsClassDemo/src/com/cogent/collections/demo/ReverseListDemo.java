@@ -10,11 +10,8 @@ import java.util.*;
  *
  *         6 окт. 2022 г.
  */
-public class MainDemo {
+public class ReverseListDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		List<Integer> al = new ArrayList<>();
