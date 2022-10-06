@@ -20,6 +20,7 @@ public class LambdaDemo {
 			System.out.println("Drawing " + width);
 			
 		};
+		
 		d2.draw();
 		
 	}
