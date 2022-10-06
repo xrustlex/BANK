@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.innerclasses;
 
 @FunctionalInterface
