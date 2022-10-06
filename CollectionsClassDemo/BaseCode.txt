@@ -12,5 +12,5 @@
 
 		System.out.println("INITIAL LIST:\t" + al);
 		Collections
-		System.out.println("SORTED LIST:\t" + al);
+		System.out.println(" SORTED LIST:\t" + al);
 		

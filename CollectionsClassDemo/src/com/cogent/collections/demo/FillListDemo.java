@@ -10,7 +10,7 @@ import java.util.*;
  *
  * 6 окт. 2022 г.
  */
-public class SortListDemo {
+public class FillListDemo {
 
 	/**
 	 * @param args
@@ -30,8 +30,8 @@ public class SortListDemo {
 		al.add(994);
 
 		System.out.println("INITIAL LIST:\t" + al);
-		Collections.sort(al);
-		System.out.println(" SORTED LIST:\t" + al);
+		Collections.fill(al, 111);
+		System.out.println(" FILLED LIST:\t" + al);
 		
 	}
 
