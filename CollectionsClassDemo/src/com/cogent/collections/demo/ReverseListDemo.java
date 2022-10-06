@@ -25,9 +25,9 @@ public class ReverseListDemo {
 		al.add(998);
 		al.add(999);
 
-		System.out.println("INITIAL LIST\t" + al);
+		System.out.println("INITIAL LIST:\t" + al);
 		Collections.reverse(al);
-		System.out.println("REVERSED LIST\t" + al);
+		System.out.println("REVERSED LIST:\t" + al);
 
 	}
 

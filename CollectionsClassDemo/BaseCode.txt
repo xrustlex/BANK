@@ -1,0 +1,16 @@
+		List<Integer> al = new ArrayList<>();
+
+		al.add(996);
+		al.add(997);
+		al.add(998);
+		al.add(999);
+		
+		al.add(991);
+		al.add(992);
+		al.add(993);
+		al.add(994);
+
+		System.out.println("INITIAL LIST:\t" + al);
+		Collections
+		System.out.println("SORTED LIST:\t" + al);
+		

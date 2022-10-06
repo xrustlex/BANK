@@ -5,12 +5,13 @@ package com.cogent.collections.demo;
 
 import java.util.*;
 
+
 /**
  * @author dick
  *
  * 6 окт. 2022 г.
  */
-public class SortListDemo {
+public class ShuffleListDemo {
 
 	/**
 	 * @param args
@@ -30,8 +31,8 @@ public class SortListDemo {
 		al.add(994);
 
 		System.out.println("INITIAL LIST:\t" + al);
-		Collections.sort(al);
-		System.out.println("SORTED LIST:\t" + al);
+		Collections.shuffle(al);
+		System.out.println("SHUFFLED LIST:\t" + al);
 		
 	}
 
