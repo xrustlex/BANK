@@ -1,9 +1,10 @@
-
+package com.cogent.innerclasses;
 /**
  * @author dick
  *
  * 6 окт. 2022 г.
  */
+
 interface Mainable {
 	
 	void show();
@@ -13,7 +14,14 @@ interface Mainable {
 		System.out.println("DISPLAY");
 		
 	}
+	
+	default void view() {
+		
+		System.out.println("VIEW");
+		
+	}
 }
+
 class Main {
 	
 	public static void main(String[] s) {
