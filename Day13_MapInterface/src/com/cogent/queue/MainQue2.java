@@ -81,7 +81,6 @@ public class MainQue2 {
 		System.out.print(pq + "\n");
 		System.out.print(pq.peek());
 
-		
 	}
 
 }
