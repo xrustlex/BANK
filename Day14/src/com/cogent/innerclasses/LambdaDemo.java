@@ -4,7 +4,7 @@ package com.cogent.innerclasses;
 @FunctionalInterface
 interface Drawable {
 	
-	public void draw();
+	public int draw(int x);
 
 }
 
@@ -15,13 +15,9 @@ public class LambdaDemo {
 		int width = 10;
 
 		//Lambda
-		Drawable d2 = () -> {
-			
-			System.out.println("Drawing " + width);
-			
-		};
+		Drawable d2 = (x) -> 10*x;
 		
-		d2.draw();
+		System.out.println(d2.draw(10));
 		
 	}
 }
