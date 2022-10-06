@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.collections.demo;
 
 import java.util.*;
@@ -12,11 +10,8 @@ import java.util.*;
  */
 public class RotateListDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		List<Integer> al = new ArrayList<>();
 
 		al.add(996);

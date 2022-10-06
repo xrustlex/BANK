@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.collections.demo;
 
 import java.util.*;
@@ -10,13 +8,11 @@ import java.util.*;
  *
  * 6 окт. 2022 г.
  */
+
 public class SwapListDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		List<Integer> al = new ArrayList<>();
 
 		al.add(996);
@@ -31,7 +27,7 @@ public class SwapListDemo {
 
 		System.out.println("INITIAL LIST:\t" + al);
 		Collections.swap(al, 3, 4);
-		System.out.println(" SORTED LIST:\t" + al);
+		System.out.println("SWAPPED LIST:\t" + al);
 		
 	}
 

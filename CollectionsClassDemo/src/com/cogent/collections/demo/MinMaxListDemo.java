@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.collections.demo;
 
 import java.util.*;
@@ -10,13 +8,11 @@ import java.util.*;
  *
  *         6 окт. 2022 г.
  */
+
 public class MinMaxListDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		List<Integer> al = new ArrayList<>();
 
 		al.add(996);
@@ -33,7 +29,7 @@ public class MinMaxListDemo {
 		int min = Collections.min(al);
 		System.out.println(" MIN IN LIST:\t" + min);
 		int max = Collections.max(al);
-		System.out.println(" MIN IN LIST:\t" + max);
+		System.out.println(" MAX IN LIST:\t" + max);
 
 	}
 

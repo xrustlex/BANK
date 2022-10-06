@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.collections.demo;
 
 import java.util.*;
@@ -10,13 +8,11 @@ import java.util.*;
  *
  * 6 окт. 2022 г.
  */
+
 public class FillListDemo {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		List<Integer> al = new ArrayList<>();
 
 		al.add(996);
