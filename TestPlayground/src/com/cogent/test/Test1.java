@@ -14,7 +14,7 @@ public class Test1 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		String s = "    HELLO MY CRAZY WORLD!    ";
 		String s1 = s.trim();
 		String[] arr = s1.split(" ");
