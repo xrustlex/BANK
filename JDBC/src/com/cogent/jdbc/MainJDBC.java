@@ -3,6 +3,10 @@
  */
 package com.cogent.jdbc;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 /**
  * @author dick
  *
@@ -14,7 +18,18 @@ public class MainJDBC {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		try {
+			
+			Class.forName("com.mysql.jdbs.Driver");
+			System.out.println("Class is available");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels");
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			e.printStackTrace();
+			
+		}
 		
 	}
 

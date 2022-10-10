@@ -7,5 +7,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/Users/dick/git/cogent/JDBC/bin/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="/Users/dick/git/cogent/JDBC/src/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="/Users/dick/git/cogent/mysql-connector.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
