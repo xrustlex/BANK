@@ -3,9 +3,7 @@
  */
 package com.cogent.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * @author dick
@@ -25,6 +23,12 @@ public class MainJDBC {
 
 			System.out.println("Class is available");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels?characterEncoding=utf8", "root", "Vadim123");
+			
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery("select * from products");
+			
+			while (rs.next())
+				System.out.println(rs.getString(1)+" " + rs.getString(2)+ " " + rs.getString(3)+ " " + rs.getString(4) + " " + rs.getString(5));
 
 		} catch (ClassNotFoundException | SQLException e) {
 
