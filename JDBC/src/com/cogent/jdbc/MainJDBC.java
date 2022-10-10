@@ -21,16 +21,17 @@ public class MainJDBC {
 	
 		try {
 			
-			Class.forName("com.mysql.jdbs.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
+
 			System.out.println("Class is available");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels");
-			
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels?characterEncoding=utf8", "root", "Vadim123");
+
 		} catch (ClassNotFoundException | SQLException e) {
-			
+
 			e.printStackTrace();
-			
+
 		}
-		
+
 	}
 
 }
