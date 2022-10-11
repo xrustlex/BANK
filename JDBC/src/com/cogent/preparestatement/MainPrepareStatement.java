@@ -21,17 +21,17 @@ public class MainPrepareStatement {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Class is available");
+			System.out.println("Class is available\n");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels?characterEncoding=utf8", "root", "Vadim123");
 			
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO STUDENTS VALUES(?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO STUDENTS VALUES(?,?,?)");//SQL query as string
 			
-			ps.setInt(1, 1001);
-			ps.setString(2, "Adam");
-			ps.setString(3, "adam@test.jdbc");
+			ps.setInt(1, 1004);
+			ps.setString(2, "Dan");
+			ps.setString(3, "dan@test.jdbc");
 			
 			int n = ps.executeUpdate();
-			System.out.println( n + "\tRECORDS UPDATED");
+			System.out.println("TOTAL RECORDS UPDATED:\t" + n);
 			
 		} catch (ClassNotFoundException | SQLException e) {
 
