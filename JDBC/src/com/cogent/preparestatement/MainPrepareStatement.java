@@ -25,7 +25,8 @@ public class MainPrepareStatement {
 
 		try {
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels?characterEncoding=utf8", "root", "Vadim123");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels?characterEncoding=utf8",
+					"root", "Vadim123");
 			ps = conn.prepareStatement("INSERT INTO STUDENTS VALUES(?,?,?)");// SQL query as a string
 
 			while (c != 0) {
@@ -50,9 +51,9 @@ public class MainPrepareStatement {
 				c = scan.nextInt();
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
-			
+
 		}
 	}
 }
