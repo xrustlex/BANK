@@ -24,29 +24,29 @@ public class MainJDBCEmployees {
 		InputStream configFile;
 
 		try {
-
+			
 			configFile = new FileInputStream("/Users/dick/git/cogent/JDBC/src/config.properties");
 			prop.load(configFile);
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-
-		}
-
-		try {
-
 			Class.forName(prop.getProperty("driver"));
 
 		} catch (ClassNotFoundException e) {
 
 			e.printStackTrace();
 
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			
 		}
 
-		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
+		try (	Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
-				PreparedStatement ps = conn.prepareStatement("INSERT INTO EMPLOYEES VALUES (?,?,?)");) {
+				PreparedStatement ps = conn.prepareStatement("INSERT INTO EMPLOYEES VALUES (?,?,?)");
+				) {
 
 			System.out.println("Class is available\n");
 			System.out.println();
