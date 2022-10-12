@@ -3,8 +3,9 @@
  */
 package com.cogent.jdbc.employees;
 
+import java.io.*;
 import java.sql.*;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author dick
@@ -19,17 +20,32 @@ public class MainJDBCEmployees {
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
+		Properties prop = new Properties();
+		InputStream configFile;
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e1) {
 
-			e1.printStackTrace();
+			configFile = new FileInputStream("/Users/dick/git/cogent/JDBC/src/config.properties");
+			prop.load(configFile);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
 
 		}
 
-		try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/TestDB?characterEncoding=utf8",
-				"root", "Vadim123");
+		try {
+
+			Class.forName(prop.getProperty("driver"));
+
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+
+		}
+
+		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
+				prop.getProperty("password"));
 				PreparedStatement ps = conn.prepareStatement("INSERT INTO EMPLOYEES VALUES (?,?,?)");) {
 
 			System.out.println("Class is available\n");
