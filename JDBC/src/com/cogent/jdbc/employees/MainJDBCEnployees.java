@@ -42,11 +42,18 @@ public class MainJDBCEnployees {
 			ps.setString(3, scan.next());
 			
 			System.out.println("TOTAL RECORDS UPDATED:\t" + ps.executeUpdate());
+			
+			scan.close();
+			ps.close();
+			conn.close();
 
 		} catch (SQLException | ClassNotFoundException e) {
 			
 			e.printStackTrace();
 			
+		}
+		finally {
+			;
 		}
 	}
 
