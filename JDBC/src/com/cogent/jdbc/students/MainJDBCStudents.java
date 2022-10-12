@@ -4,10 +4,7 @@
 package com.cogent.jdbc.students;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
 
 /**
@@ -22,6 +19,8 @@ public class MainJDBCStudents {
 		Properties prop = new Properties();
 		InputStream configFile;
 		Scanner scan = new Scanner(System.in);
+
+		List<StudentBean> studentList = new ArrayList();
 
 		try {
 
@@ -63,13 +62,30 @@ public class MainJDBCStudents {
 			e.printStackTrace();
 
 		}
-		
-		//TODO READ FROM DARABASE
-		
-		//TODO TO SAVE TO students.dat FILE
-		
-		//TODO PRINT FROM students.dat FILE
-		
+		// TODO READ STUDENTS FROM DARABASE
+		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
+				prop.getProperty("password"));
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery("SELECT * FROM STUDENTS");) {
+
+			while (rs.next()) {
+
+				StudentBean s = new StudentBean(rs.getInt(1), rs.getString(2), rs.getString(3));
+				studentList.add(s);
+
+			}
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+
+		}
+		// PRINTING  STUDENT LIST TO CONSOLE
+		studentList.forEach(System.out::println);
+		// TODO TO SAVE TO students.dat FILE
+
+		// TODO PRINT FROM students.dat FILE
+
 	}
 
 }
