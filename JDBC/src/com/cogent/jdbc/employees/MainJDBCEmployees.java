@@ -29,19 +29,11 @@ public class MainJDBCEmployees {
 			prop.load(configFile);
 			Class.forName(prop.getProperty("driver"));
 
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
 
 			e.printStackTrace();
 
-		} catch (FileNotFoundException e) {
-
-			e.printStackTrace();
-			
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-			
-		}
+		} 
 
 		try (	Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
