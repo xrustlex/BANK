@@ -3,12 +3,14 @@
  */
 package com.cogent.jdbc.students;
 
+import java.io.*;
+
 /**
  * @author dick
  *
  * 12 окт. 2022 г.
  */
-public class StudentBean {
+public class StudentBean implements Serializable {
 	
 	private int studentID;
 	private String studentName;
