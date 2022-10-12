@@ -43,6 +43,12 @@ public class StudentBean {
 	public void setStudentEmail(String studentEmail) {
 		this.studentEmail = studentEmail;
 	}
+
+	@Override
+	public String toString() {
+		return "StudentBean [studentID=" + studentID + ", studentName=" + studentName + ", studentEmail=" + studentEmail
+				+ "]";
+	}
 	
 	
 	
