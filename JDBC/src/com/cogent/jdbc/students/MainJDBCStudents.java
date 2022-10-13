@@ -35,21 +35,20 @@ public class MainJDBCStudents {
 				PreparedStatement ps = conn.prepareStatement("INSERT INTO STUDENTS VALUES (?,?,?)");) {
 			
 			Scanner scan = new Scanner(System.in);
+			System.out.println("\nSUCCESSFULLY CONNECTED TO DATABASE\n");
 
-			System.out.println("\n");
-			System.out.println("Class is available\n");
-
-			System.out.println("ENTER STUDENT ID\t");
+			System.out.print("ENTER STUDENT ID\t");
 			ps.setInt(1, scan.nextInt());
 
-			System.out.println("ENTER STUDENT NAME\t");
+			System.out.print("ENTER STUDENT NAME\t");
 			ps.setString(2, scan.next());
 
-			System.out.println("ENTER STUDENT EMAIL\t");
+			System.out.print("ENTER STUDENT EMAIL\t");
 			ps.setString(3, scan.next());
 
 			System.out.println("\n");
 			System.out.println("TOTAL RECORDS UPDATED:\t" + ps.executeUpdate());
+			System.out.println("\n");
 			
 			scan.close();
 			ps.close();
@@ -69,21 +68,24 @@ public class MainJDBCStudents {
 				studentList.add(new StudentBean(rs.getInt(1), rs.getString(2), rs.getString(3)));
 
 			}
-			// PRINTING STUDENT LIST TO CONSOLE
+			// PRINTING STUDENT LIST TO CONSOLe
+			System.out.println("PRINTING FROM DATABASE TABLE:\n");
 			studentList.forEach(System.out::println);
 			
 			// SAVING TO students.dat FILE
 			File f = new File("students.bin");
 			FileOutputStream fos = new FileOutputStream(f);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			
 			oos.writeObject(studentList);
 			
 			// TODO PRINT FROM students.dat FILE
 			FileInputStream fis = new FileInputStream(f);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			Object obj = ois.readObject();
-			List<StudentBean> sb = (ArrayList<StudentBean>) obj;
 			
+			List<StudentBean> sb = (ArrayList<StudentBean>) obj;
+			System.out.println("\nPRINTING FROM student.dat FILE:\n");
 			sb.forEach(System.out::println);
 			
 			ois.close();
@@ -99,23 +101,3 @@ public class MainJDBCStudents {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
