@@ -12,6 +12,7 @@ import java.io.*;
  */
 public class StudentBean implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private int studentID;
 	private String studentName;
 	private String studentEmail;
@@ -48,10 +49,7 @@ public class StudentBean implements Serializable {
 
 	@Override
 	public String toString() {
-		return "StudentBean [studentID=" + studentID + ", studentName=" + studentName + ", studentEmail=" + studentEmail
-				+ "]";
+		return "Student ID:\t" + studentID + ", Student Name:\t" + studentName + ", Student Email:\t" + studentEmail;
 	}
-	
-	
 	
 }
