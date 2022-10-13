@@ -79,7 +79,7 @@ public class MainJDBCStudents {
 			
 			oos.writeObject(studentList);
 			
-			// TODO PRINT FROM students.dat FILE
+			// PRINTING FROM students.dat FILE
 			FileInputStream fis = new FileInputStream(f);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			Object obj = ois.readObject();
