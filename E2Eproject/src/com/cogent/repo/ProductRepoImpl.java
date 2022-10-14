@@ -19,14 +19,13 @@ public class ProductRepoImpl implements ProductRepo {
 
 	@Override
 	public void addProduct(ProductBean product) {
-		// TODO Auto-generated method stub
-
+		products.add(product);
 	}
 
 	@Override
 	public void deleteById(long id) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
