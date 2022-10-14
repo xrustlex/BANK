@@ -11,13 +11,13 @@ import java.sql.Date;
 /**
  * @author dick
  *
- * 14 окт. 2022 г.
+ *         14 окт. 2022 г.
  */
 //Products (pID int, pName varchar(255), pCat varchar(255), 
 //price DECIMAL (10,2), manufDate date, expDate date)
 public class ProductBean {
 
-	private long id; 
+	private long id;
 	private String name;
 	private String categ;
 	private BigDecimal price;
@@ -25,20 +25,22 @@ public class ProductBean {
 	private Date exp;
 
 	public ProductBean(int id, String name, String categ, BigDecimal price, Date made, Date exp) {
-		
+
 		this.id = id;
 		this.name = name;
 		this.categ = categ;
 		this.price = price;
 		this.made = made;
 		this.exp = exp;
-		
+
 	}
 
 	@Override
 	public String toString() {
-		return "ProductBean [id=" + id + ", name=" + name + ", categ=" + categ + ", price=" + price + ", made=" + made
-				+ ", exp=" + exp + "]";
+
+		return "ID " + id + ", product " + name + ", category " + categ + ", price " + price + ", date of make " + made
+				+ ", expiration date " + exp;
+
 	}
-	
+
 }
