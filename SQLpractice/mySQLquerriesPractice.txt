@@ -12,5 +12,7 @@
 	
 178. Rank Scores
 
+	mysql> select OfficeNumber, @rank := @rank + (@prev <> (@prev := officeNumber)) as Rank from Employees, (select @rank := 0, @prev := -1) as a order by officeNuber, desc;
 	
+
 	
