@@ -26,7 +26,7 @@ public class ProductBean implements Serializable {
 	private Date made;
 	private Date exp;
 
-	public ProductBean(int id, String name, String categ, BigDecimal price, Date made, Date exp) {
+	public ProductBean(long id, String name, String categ, BigDecimal price, Date made, Date exp) {
 
 		this.id = id;
 		this.name = name;
@@ -39,10 +39,6 @@ public class ProductBean implements Serializable {
 
 	public long getId() {
 		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getName() {
