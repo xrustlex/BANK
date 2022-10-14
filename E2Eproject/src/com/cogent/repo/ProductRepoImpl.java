@@ -69,7 +69,7 @@ public class ProductRepoImpl implements ProductRepo {
 		try (
 				Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
-				PreparedStatement ps = conn.prepareStatement("DELETE FROM PRODUCTS WHERE id = ?");) {
+				PreparedStatement ps = conn.prepareStatement("DELETE FROM products WHERE id = ?");) {
 			
 			ps.setLong(1, id);
 			ps.executeUpdate();
@@ -81,9 +81,27 @@ public class ProductRepoImpl implements ProductRepo {
 
 	@Override
 	public void deleteByCat(String cat) {
-		// TODO Auto-generated method stub
+		// DELETE FROM PRODUCTS WHERE categ = cat
+		try {
 
-	}
+			configFile = new FileInputStream("config.properties");
+			prop.load(configFile);
+			Class.forName(prop.getProperty("driver"));
+
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		try (
+				Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
+				prop.getProperty("password"));
+				PreparedStatement ps = conn.prepareStatement("DELETE FROM products WHERE categ = ?");) {
+			
+			ps.setString(1, cat);
+			ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	}
 
 	@Override
 	public ProductBean findProductById(long id) {
