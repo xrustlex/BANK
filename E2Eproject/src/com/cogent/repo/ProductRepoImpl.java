@@ -16,37 +16,39 @@ import com.cogent.bean.ProductBean;
  */
 public class ProductRepoImpl implements ProductRepo {
 
+	InputStream configFile = null;
+	Properties prop = new Properties();
 	public List<ProductBean> products = new ArrayList<>();
 
 	@Override
 	public void addProduct(ProductBean product) {
 
-		InputStream configFile = null;
-		Properties prop = new Properties();
-
 		try {
-			
+
 			configFile = new FileInputStream("config.properties");
 			prop.load(configFile);
 			Class.forName(prop.getProperty("driver"));
-			
+
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		try (
 				Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
 				PreparedStatement ps = conn.prepareStatement("INSERT INTO PRODUCTS VALUES (?,?,?,?,?)");) {
 			// INSERT INTO PRODUCTS
-			ps.setString(1,product.getName());
-			ps.setString(2,product.getCateg());
+			ps.setString(1, product.getName());
+			ps.setString(2, product.getCateg());
 			ps.setBigDecimal(3, product.getPrice());
 			ps.setDate(4, product.getMade());
 			ps.setDate(5, product.getExp());
-			
+			ps.executeUpdate();
+
+			ps.close();
+			conn.close();
+
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -54,8 +56,27 @@ public class ProductRepoImpl implements ProductRepo {
 
 	@Override
 	public void deleteById(long id) {
-		// TODO Auto-generated method stub
+		// DELETE FROM PRODUCTS WHERE ID=id
+		try {
 
+			configFile = new FileInputStream("config.properties");
+			prop.load(configFile);
+			Class.forName(prop.getProperty("driver"));
+
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		try (
+				Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
+				prop.getProperty("password"));
+				PreparedStatement ps = conn.prepareStatement("DELETE FROM PRODUCTS WHERE id = ?");) {
+			
+			ps.setLong(1, id);
+			ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
