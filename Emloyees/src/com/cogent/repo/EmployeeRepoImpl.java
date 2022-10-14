@@ -26,8 +26,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	public List<EmployeeBean> viewAllEmloyees() {
 
 		return employees;
-		//for (int i = 0; i < employees.size(); i++)
-		//	employees.get(i).toString();
+
 	}
 
 	@Override

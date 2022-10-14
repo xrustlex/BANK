@@ -13,20 +13,20 @@ import com.cogent.bean.ProductBean;
  * 14 окт. 2022 г.
  */
 public interface ProductRepo {
-
 	/* 
 	 * operation--›addProduct, deleteProductById, deleteProductByCat,
 	 * operation--›findCheapestProductInCat, findProductByCat, findProductById 
 	 * operation--›updateProduct, findExpiredProducts
 	 */
-	void addProduct(ProductBean product);
-	void deleteById(long id);
-	void deleteByCat(String cat);	
+	public void addProduct(ProductBean product);
+	public void deleteById(long id);
+	public void deleteByCat(String cat);	
 	
-	ProductBean findCheapestInCat();
-	List<ProductBean> findProductByCat(String cat);
-	List<ProductBean> findProductById(long id);
+	public ProductBean findProductById(long id);
+	public ProductBean findCheapestInCat(String cat);
+	public List<ProductBean> findProductsByCat(String cat);
 	
-	void updateProduct(ProductBean product);
-	List<ProductBean> findExpiredProducts();
+	public void updateProduct(ProductBean product);
+	public List<ProductBean> findExpiredProducts();
+	
 }
