@@ -4,6 +4,7 @@
 package com.cogent.bean;
 
 import java.util.*;
+import java.io.*;
 import java.math.*;
 import java.sql.*;
 import java.sql.Date;
@@ -15,8 +16,9 @@ import java.sql.Date;
  */
 //Products (pID int, pName varchar(255), pCat varchar(255), 
 //price DECIMAL (10,2), manufDate date, expDate date)
-public class ProductBean {
+public class ProductBean implements Serializable {
 
+	private static final long serialVersionUID = -7765590728013703393L;
 	private long id;
 	private String name;
 	private String categ;
