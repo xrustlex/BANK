@@ -37,6 +37,54 @@ public class ProductBean implements Serializable {
 
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCateg() {
+		return categ;
+	}
+
+	public void setCateg(String categ) {
+		this.categ = categ;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public Date getMade() {
+		return made;
+	}
+
+	public void setMade(Date made) {
+		this.made = made;
+	}
+
+	public Date getExp() {
+		return exp;
+	}
+
+	public void setExp(Date exp) {
+		this.exp = exp;
+	}
+
 	@Override
 	public String toString() {
 

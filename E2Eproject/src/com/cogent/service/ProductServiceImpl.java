@@ -25,43 +25,36 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void deleteById(long id) {
-		// TODO Auto-generated method stub
 		productrepo.deleteById(id);
 	}
 
 	@Override
 	public void deleteByCat(String cat) {
-		// TODO Auto-generated method stub
 		productrepo.deleteByCat(cat);
 	}
 
 	@Override
 	public ProductBean findProductById(long id) {
-		// TODO Auto-generated method stub
 		return productrepo.findProductById(id);
 	}
 
 	@Override
 	public ProductBean findCheapestInCat(String cat) {
-		// TODO Auto-generated method stub
 		return productrepo.findCheapestInCat(cat);
 	}
 
 	@Override
 	public List<ProductBean> findProductsByCat(String cat) {
-		// TODO Auto-generated method stub
 		return productrepo.findProductsByCat(cat);
 	}
 
 	@Override
 	public void updateProduct(ProductBean product) {
-		// TODO Auto-generated method stub
 		productrepo.updateProduct(product);
 	}
 
 	@Override
 	public List<ProductBean> findExpiredProducts() {
-		// TODO Auto-generated method stub
 		return productrepo.findExpiredProducts();
 	}
 
