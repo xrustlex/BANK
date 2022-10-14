@@ -3,17 +3,9 @@
  */
 package com.cogent.repo;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.io.*;
+import java.sql.*;
+import java.util.*;
 
 import com.cogent.bean.ProductBean;
 
@@ -46,8 +38,12 @@ public class ProductRepoImpl implements ProductRepo {
 				Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
 				PreparedStatement ps = conn.prepareStatement("INSERT INTO PRODUCTS VALUES (?,?,?,?,?)");) {
-
-			;
+			// INSERT INTO PRODUCTS
+			ps.setString(1,product.getName());
+			ps.setString(2,product.getCateg());
+			ps.setBigDecimal(3, product.getPrice());
+			ps.setDate(4, product.getMade());
+			ps.setDate(5, product.getExp());
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
