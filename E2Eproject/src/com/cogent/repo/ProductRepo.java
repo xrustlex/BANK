@@ -23,7 +23,7 @@ public interface ProductRepo {
 	public void deleteByCat(String cat);	
 	
 	public ProductBean findProductById(long id);
-	public ProductBean findCheapestInCat(String cat);
+	public List<ProductBean> findCheapestInCat(String cat);
 	public List<ProductBean> findProductsByCat(String cat);
 	
 	public void updateProduct(ProductBean product);
