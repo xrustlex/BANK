@@ -19,7 +19,6 @@ public class ProductServiceImpl implements ProductService {
 	ProductRepo productrepo  = new ProductRepoImpl();
 	@Override
 	public void addProduct(ProductBean product) {
-		// TODO Auto-generated method stub
 		productrepo.addProduct(product);
 	}
 
