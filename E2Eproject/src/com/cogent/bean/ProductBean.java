@@ -3,10 +3,8 @@
  */
 package com.cogent.bean;
 
-import java.util.*;
 import java.io.*;
 import java.math.*;
-import java.sql.*;
 import java.sql.Date;
 
 /**

@@ -39,7 +39,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductBean findCheapestInCat(String cat) {
+	public List<ProductBean> findCheapestInCat(String cat) {
 		return productrepo.findCheapestInCat(cat);
 	}
 
