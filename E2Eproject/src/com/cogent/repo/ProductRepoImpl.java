@@ -290,10 +290,9 @@ public class ProductRepoImpl implements ProductRepo {
 
 			ResultSet rs = ps.executeQuery();
 			// ADDING TO LIST
-			while (rs.next()) {
-				// ADDING TO LIST
+			while (rs.next()) 
+				
 				products.add(new ProductBean(rs.getLong("ID"), rs.getString("name"), rs.getString("categ"), rs.getBigDecimal("price"), rs.getDate("made"), rs.getDate("exp")));
-			}
 			
 			ps.close();
 			conn.close();
