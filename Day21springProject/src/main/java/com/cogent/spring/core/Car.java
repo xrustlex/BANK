@@ -3,6 +3,8 @@
  */
 package com.cogent.spring.core;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author dick
  *
@@ -20,10 +22,7 @@ public class Car {
 		
 	}
 
-	public Engine getEngine() {
-		return engine;
-	}
-
+	@Autowired
 	public void setEngine(Engine engine) {
 		this.engine = engine;
 	}

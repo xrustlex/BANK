@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.spring.core;
 
 import org.springframework.context.ApplicationContext;
