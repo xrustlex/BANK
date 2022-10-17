@@ -1,10 +1,6 @@
+package com.cogent.spring.core;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-/**
- * 
- */
-
 /**
  * @author dick
  *
@@ -15,7 +11,9 @@ public class SpringConfig {
 
 	@Bean
 	public Printer getPrinter() {
+		
 		return new Printer();
+		
 	}
 
 }

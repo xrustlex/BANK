@@ -1,4 +1,5 @@
-//import com.cogent.spring.core;
+package com.cogent.spring.core;
+
 
 /**
  * @author dick
@@ -8,6 +9,8 @@
 public class Printer {
 
 	public void print() {
+		
 		System.out.println("PRINTING");
+		
 	}
 }
