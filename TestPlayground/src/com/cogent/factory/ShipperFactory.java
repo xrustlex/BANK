@@ -20,9 +20,16 @@ public class ShipperFactory implements Shipable {
         if (shipper == "DHL")
             shipper = new DHLShipper();
 
-        else
-            return;
+    }
 
+    ShipperFactory getShipperFactory(String shipper) {
+
+        if (shipper == "UPS")
+            shipper = new UPSShipper();
+
+        if (shipper == "DHL")
+            shipper = new DHLShipper();
+        return shipper;
     }
 
     @Override
