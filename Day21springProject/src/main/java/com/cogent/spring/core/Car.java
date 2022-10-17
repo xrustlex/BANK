@@ -17,6 +17,15 @@ public class Car {
 		engine.startEngine();
 		System.out.println("EN ROUTE");
 		engine.stopEngine();
+		
 	}
 
+	public Engine getEngine() {
+		return engine;
+	}
+
+	public void setEngine(Engine engine) {
+		this.engine = engine;
+	}
+	
 }
