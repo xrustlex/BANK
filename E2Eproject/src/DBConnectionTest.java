@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class Main1 {
+public class DBConnectionTest {
 
 	public static void main(String[] args) {
 		// LOADING FROM config.properties FILE
