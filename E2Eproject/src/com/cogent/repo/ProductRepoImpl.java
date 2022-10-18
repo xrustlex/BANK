@@ -16,19 +16,50 @@ import com.cogent.bean.ProductBean;
  */
 public class ProductRepoImpl implements ProductRepo {
 
+	{
+		// LOADING FROM config.properties FILE
+		Properties prop = new Properties();
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
+			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
+
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
+			e.printStackTrace();
+		}
+	}
+
 	@Override
 	public void addProduct(ProductBean product) {
 
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
+		Properties prop = new Properties();
 		// LOADING FROM config.properties FILE
-		try {
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
 		// INSERT INTO PRODUCTS (name,categ,price,made,exp) VALUES (?,?,?,?,?)
@@ -57,22 +88,32 @@ public class ProductRepoImpl implements ProductRepo {
 	@Override
 	public void deleteById(long id) {
 
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
+		Properties prop = new Properties();
 		// LOADING FROM config.properties FILE
-		try {
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
 		// DELETE FROM products WHERE id = ?
-		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
-				prop.getProperty("password"));
-				PreparedStatement ps = conn.prepareStatement("DELETE FROM products WHERE id = ?");) {
+		try {
+
+			Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
+					prop.getProperty("password"));
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM products WHERE id = ?");
 
 			ps.setLong(1, id);
 			ps.executeUpdate();
@@ -88,18 +129,7 @@ public class ProductRepoImpl implements ProductRepo {
 	@Override
 	public void deleteByCat(String cat) {
 
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
-		// LOADING FROM config.properties FILE
-		try {
-
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
-			Class.forName(prop.getProperty("driver"));
-
-		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+		Properties prop = new Properties();
 		// DELETE FROM PRODUCTS WHERE categ = ?
 		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
@@ -120,16 +150,24 @@ public class ProductRepoImpl implements ProductRepo {
 	public ProductBean findProductById(long id) {
 
 		ProductBean product = null;
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
+		Properties prop = new Properties();
 		// LOADING FROM config.properties FILE
-		try {
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
 		// SELECT * FROM products WHERE id = ?
@@ -149,25 +187,35 @@ public class ProductRepoImpl implements ProductRepo {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 		return product;
 	}
 
 	@Override
 	public List<ProductBean> findCheapestInCat(String cat) {
-
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
+		
 		List<ProductBean> products = new ArrayList<>();
 		// LOADING FROM config.properties FILE
-		try {
+		Properties prop = new Properties();
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
+
 		// SELECT * FROM products WHERE price = (SELECT MIN(price) FROM products WHERE
 		// categ = ?)
 		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
@@ -195,19 +243,28 @@ public class ProductRepoImpl implements ProductRepo {
 	@Override
 	public List<ProductBean> findProductsByCat(String cat) {
 
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
 		List<ProductBean> products = new ArrayList<>();
 		// LOADING FROM config.properties FILE
-		try {
+		Properties prop = new Properties();
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
+
 		// SELECT * FROM products WHERE categ = '?'
 		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
@@ -217,7 +274,8 @@ public class ProductRepoImpl implements ProductRepo {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				// ADDING TO LIST
-				products.add(new ProductBean(rs.getLong("ID"), rs.getString("name"), rs.getString("categ"), rs.getBigDecimal("price"), rs.getDate("made"), rs.getDate("exp")));
+				products.add(new ProductBean(rs.getLong("ID"), rs.getString("name"), rs.getString("categ"),
+						rs.getBigDecimal("price"), rs.getDate("made"), rs.getDate("exp")));
 			}
 
 		} catch (SQLException e) {
@@ -229,19 +287,27 @@ public class ProductRepoImpl implements ProductRepo {
 
 	@Override
 	public void updateProduct(ProductBean product) {
-
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
+		Properties prop = new Properties();
 		// LOADING FROM config.properties FILE
-		try {
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
+
 		// UPDATE products SET name = ?, categ = ?, price = ?, made = ?, exp = ? WHERE
 		// ID = ?
 		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
@@ -270,19 +336,28 @@ public class ProductRepoImpl implements ProductRepo {
 	@Override
 	public List<ProductBean> findExpiredProducts() {
 
-		InputStream configFile = null;
-		Properties prop = new Properties(null);
 		List<ProductBean> products = new ArrayList<>();
+		Properties prop = new Properties();
 		// LOADING FROM config.properties FILE
-		try {
+		try (InputStream input = new FileInputStream("config.properties");) {
 
-			configFile = new FileInputStream("config.properties");
-			prop.load(configFile);
+			prop.load(input);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		// ESTABLISHING CONNECTION TO DATABASE
+		try (InputStream input = new FileInputStream("config.properties");) {
+
+			prop.load(input);
 			Class.forName(prop.getProperty("driver"));
+			System.out.println("\nCONNECTION ESTABLISHED\n");
 
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
+			System.out.println("\nNO CONNECTION AVAILABLE\n");
 			e.printStackTrace();
 		}
+
 		// SELECT * FROM products WHERE exp < Current_Date()
 		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
@@ -290,10 +365,11 @@ public class ProductRepoImpl implements ProductRepo {
 
 			ResultSet rs = ps.executeQuery();
 			// ADDING TO LIST
-			while (rs.next()) 
-				
-				products.add(new ProductBean(rs.getLong("ID"), rs.getString("name"), rs.getString("categ"), rs.getBigDecimal("price"), rs.getDate("made"), rs.getDate("exp")));
-			
+			while (rs.next())
+
+				products.add(new ProductBean(rs.getLong("ID"), rs.getString("name"), rs.getString("categ"),
+						rs.getBigDecimal("price"), rs.getDate("made"), rs.getDate("exp")));
+
 			ps.close();
 			conn.close();
 

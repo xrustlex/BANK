@@ -1,7 +1,7 @@
 
 package com.cogent.factory;
 
-public interface Shipable {
+public interface ShippingService {
 
     void ship();
 

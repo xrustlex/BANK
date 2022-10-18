@@ -5,13 +5,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Shipable upsShipper = new UPSShipper();
-        Shipable dhlSshipper = new DHLShipper();
-        Shipable shipper = new ShipperFactory();
+        ShippingService upsShipper = new UPSShipper();
+        ShippingService dhlSshipper = new DHLShipper();
+        ShippingService shipper = new ShipperFactory();
         
         shipper.ship();
         upsShipper.ship();
         dhlSshipper.ship();
+        
     }
 
 }
