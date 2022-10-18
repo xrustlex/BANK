@@ -23,13 +23,13 @@ public class Main {
 		Date made = null;
 		Date exp = null;
 		// SEARCHING FOR PRODUCT
-		System.out.print("\nENTER CATEGORY FOR SEARCH\t");
-		categ = scan.next();
-		productRepo.findProductsByCat(categ);
+		//System.out.print("\nENTER CATEGORY FOR SEARCH\t");
+		//categ = scan.next();
+		//productRepo.findProductsByCat(categ);
 		// DELETING PRODUCT
-		//System.out.print("\nENTER ID FOR DELETION\t");
-		//productRepo.deleteById(scan.nextLong());
-		// ADDING PRODUCT
+		System.out.print("\nENTER ID FOR DELETION\t");
+		productRepo.deleteById(scan.nextLong());
+		/*ADDING PRODUCT
 		System.out.print("\nENTER PRODUCT NAME\t");
 		name = scan.next();
 		
@@ -47,7 +47,8 @@ public class Main {
 		
 		ProductBean product = new ProductBean(id, name, categ, price, made, exp);
 		productRepo.addProduct(product);
-		
+		*/
+		productRepo.findExpiredProducts().forEach(System.out::println);;
 		scan.close();
 
 	}
