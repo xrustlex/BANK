@@ -15,7 +15,7 @@ import com.cogent.bean.ProductBean;
  *         14 окт. 2022 г.
  */
 public class ProductRepoImpl implements ProductRepo {
-
+	
 	{
 		// LOADING FROM config.properties FILE
 		Properties prop = new Properties();

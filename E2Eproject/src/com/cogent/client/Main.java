@@ -23,11 +23,12 @@ public class Main {
 		Date made = null;
 		Date exp = null;
 		// SEARCHING FOR PRODUCT
-		System.out.print("\nENTER ID FOR SEARCH\t");
-		productRepo.findProductById(scan.nextLong());
+		System.out.print("\nENTER CATEGORY FOR SEARCH\t");
+		categ = scan.next();
+		productRepo.findProductsByCat(categ);
 		// DELETING PRODUCT
-		System.out.print("\nENTER ID FOR DELETION\t");
-		productRepo.deleteById(scan.nextLong());
+		//System.out.print("\nENTER ID FOR DELETION\t");
+		//productRepo.deleteById(scan.nextLong());
 		// ADDING PRODUCT
 		System.out.print("\nENTER PRODUCT NAME\t");
 		name = scan.next();
