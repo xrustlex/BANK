@@ -1,10 +1,13 @@
 package com.cogent.springboot.bean;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
 
 	public void drive() {
 
-		System.out.println("DRIVING");
+		System.out.println("\nDRIVING");
 
 	}
 }
