@@ -1,3 +1,4 @@
+package com.cogent.factory;
 import com.cogent.factory.Shipper;
 
 /**
@@ -16,7 +17,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Shipper shipper = new Shipper(shipper);
+        ShipperFactory shipper = new ShipperFactory(shipper);
         shipper.ship(shipper);
         
     }
