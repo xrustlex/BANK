@@ -1,7 +1,7 @@
 
 package com.cogent.factory;
 
-public class UPSShipper implements Shipable {
+public class UPSShipper extends ShipperFactory {
     
     private final String name = "UPS";
 
