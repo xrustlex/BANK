@@ -14,41 +14,49 @@ public class Main {
 
 		Scanner scan = new Scanner(System.in);
 		ProductRepo productRepo = new ProductRepoImpl();
-		
+
 		long id = 0;
 		String name = null;
 		String categ = null;
-		
+
 		BigDecimal price = null;
 		Date made = null;
 		Date exp = null;
-		// SEARCHING FOR PRODUCT
-		//System.out.print("\nENTER CATEGORY FOR SEARCH\t");
-		//categ = scan.next();
-		//productRepo.findProductsByCat(categ);
+
+		// SEARCHING FOR PRODUCT BY ID
+		System.out.print("\nENTER ID FOR SEARCH\t");
+		id = scan.nextLong();
+		productRepo.findProductById(id).toString();
+		
+		// SEARCHING FOR PRODUCT BY CATEGORY
+		System.out.print("\nENTER CATEGORY FOR SEARCH\t");
+		categ = scan.next();
+		productRepo.findProductsByCat(categ).forEach(System.out::println);
+	
+		// ADDING PRODUCT
+//		System.out.print("\nENTER PRODUCT NAME\t");
+//		name = scan.next();
+//
+//		System.out.print("\nENTER PRODUCT CATEGORY\t");
+//		categ = scan.next();
+//
+//		System.out.print("\nENTER PRODUCT PRICE\t");
+//		price = new BigDecimal(scan.next());
+//
+//		System.out.print("\nENTER PRODUCTION DATE\t");
+//		made = Date.valueOf(scan.next());
+//
+//		System.out.print("\nENTER EXPIRATION DATE\t");
+//		exp = Date.valueOf(scan.next());
+//
+//		ProductBean product = new ProductBean(id, name, categ, price, made, exp);
+//		productRepo.addProduct(product);
+
 		// DELETING PRODUCT
 		System.out.print("\nENTER ID FOR DELETION\t");
 		productRepo.deleteById(scan.nextLong());
-		/*ADDING PRODUCT
-		System.out.print("\nENTER PRODUCT NAME\t");
-		name = scan.next();
-		
-		System.out.print("\nENTER PRODUCT CATEGORY\t");
-		categ = scan.next();
-		
-		System.out.print("\nENTER PRODUCT PRICE\t");
-		price = new BigDecimal(scan.next());
-		
-		System.out.print("\nENTER PRODUCTION DATE\t");
-		made = Date.valueOf(scan.next());
-		
-		System.out.print("\nENTER EXPIRATION DATE\t");
-		exp = Date.valueOf(scan.next());
-		
-		ProductBean product = new ProductBean(id, name, categ, price, made, exp);
-		productRepo.addProduct(product);
-		*/
-		productRepo.findExpiredProducts().forEach(System.out::println);;
+		productRepo.findExpiredProducts().forEach(System.out::println);
+
 		scan.close();
 
 	}

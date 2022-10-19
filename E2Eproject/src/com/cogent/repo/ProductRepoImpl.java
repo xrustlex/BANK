@@ -268,7 +268,7 @@ public class ProductRepoImpl implements ProductRepo {
 		// SELECT * FROM products WHERE categ = '?'
 		try (Connection conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 				prop.getProperty("password"));
-				PreparedStatement ps = conn.prepareStatement("SELECT * FROM products WHERE categ = '?'")) {
+				PreparedStatement ps = conn.prepareStatement("SELECT * FROM products WHERE categ = ?")) {
 
 			ps.setString(1, cat);
 			ResultSet rs = ps.executeQuery();
