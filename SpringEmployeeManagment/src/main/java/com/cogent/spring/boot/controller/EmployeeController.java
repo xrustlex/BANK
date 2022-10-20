@@ -1,4 +1,5 @@
 package com.cogent.spring.boot.controller;
+
 import com.cogent.spring.boot.controller.EmployeeController;
 
 import java.util.List;
@@ -16,10 +17,10 @@ public class EmployeeController {
 	// WRITE LOGIC TO PERFORM CRUD OPERATIONS USING HTTP METHODS
 	// USE JPA REPOSITORY TO VARIOUS OPERATIONS
 	
-	// GET
-	// POST
-	// PUT
-	// DELETE
+	// GET	-	READ
+	// POST -	CREATE
+	// PUT	-	UPDATE
+	// DELETE	DELETE
 
 	// READ
 	@Autowired

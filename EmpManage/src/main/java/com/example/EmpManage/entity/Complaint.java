@@ -7,18 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="complaints")
 public class Complaint {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String description;
-	private String empName;
+	private long empId;
 	private String status;
 	@Override
 	public String toString() {
-		return "Complaint [id=" + id + ", description=" + description + ", empName=" + empName + ", status=" + status
+		return "Complaint [id=" + id + ", description=" + description + ", empId=" + empId + ", status=" + status
 				+ "]";
 	}
 	public Complaint() {
@@ -36,11 +36,11 @@ public class Complaint {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getEmpName() {
-		return empName;
+	public long getEmpName() {
+		return empId;
 	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setEmpName(long empId) {
+		this.empId = empId;
 	}
 	public String getStatus() {
 		return status;

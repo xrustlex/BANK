@@ -11,38 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.EmpManage.entity.Employee;
 import com.example.EmpManage.repo.EmployRepository;
 
-
 @RestController
 public class EmployeeController {
-	
-	//http MEthod to creat rest API Endpoints 
-	//GET
-	//POST
-	//PUT
-	//DELETE
-	
-	
-	//Get Operation Read  of CRUD.....
-	
 
 	@Autowired
-    EmployRepository employRepository;
-	
-	 @PostMapping("/addemployee")
-	  Employee newEmployee(@RequestBody Employee employee) {
-	    return employRepository.save(employee);   //insert SQL
-	  }
-	
-	
-	
-	
-	  @GetMapping("/getemployee")   //End Point 
-	 //@RequestMapping(method=RequestMethod.GET ,value="/users")
-	  List<Employee> getAllEmployee() {
-	    return employRepository.findAll();
-	  }
-	
-	
-	
+	EmployRepository employRepository;
+
+	@PostMapping("/addemployee")
+	Employee newEmployee(@RequestBody Employee employee) {
+		return employRepository.save(employee); // insert SQL
+	}
+
+	@GetMapping("/getemployee") // End Point
+	// @RequestMapping(method=RequestMethod.GET ,value="/users")
+	List<Employee> getAllEmployee() {
+		return employRepository.findAll();
+	}
 
 }
