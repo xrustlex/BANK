@@ -1,41 +1,30 @@
 package com.cogent.spring.boot.controller;
 
-import com.cogent.spring.boot.controller.EmployeeController;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.cogent.spring.boot.bean.EmployeeBean;
+import com.cogent.spring.boot.bean.Employee;
 import com.cogent.spring.boot.repo.EmployeeRepo;
 
-@Controller
+@RestController
 public class EmployeeController {
 
-	// WRITE LOGIC TO PERFORM CRUD OPERATIONS USING HTTP METHODS
-	// USE JPA REPOSITORY TO VARIOUS OPERATIONS
-	
-	// GET	-	READ
-	// POST -	CREATE
-	// PUT	-	UPDATE
-	// DELETE	DELETE
-
-	// READ
 	@Autowired
 	EmployeeRepo employeeRepo;
 	
-	// creating a get mapping that retrieves all the books detail from the database
-	@GetMapping("/getallemployees")
-	private List<EmployeeBean> getAllEmployees() {
-		return employeeRepo.findAll();
+	@PostMapping("/addemployee")
+	Employee newEmployee(@RequestBody Employee employee) {
+		return employeeRepo.save(employee);
 	}
 	
-	// CREATE
-	
-	// UPDATE
-
-	// DELETE
+	@GetMapping("/getallemployees")
+	private List<Employee> getAllEmployees() {
+		return employeeRepo.findAll();
+	}
 
 }

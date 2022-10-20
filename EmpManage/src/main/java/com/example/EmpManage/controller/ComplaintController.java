@@ -23,7 +23,6 @@ public class ComplaintController {
 	}
 
 	@GetMapping("/getcomplaint") // End Point
-	// @RequestMapping(method=RequestMethod.GET ,value="/users")
 	List<Complaint> getAllComplaints() {
 		return complaintRepo.findAll();
 	}

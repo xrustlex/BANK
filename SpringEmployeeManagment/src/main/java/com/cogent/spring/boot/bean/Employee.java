@@ -13,7 +13,7 @@ import org.springframework.data.annotation.Id;
 
 @EntityScan
 @Table(name="Employees")
-public class EmployeeBean {
+public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +27,8 @@ public class EmployeeBean {
 	private BigDecimal pay;
 	
 	@Bean
-	public EmployeeBean getEmployeeBean() {
-		return new EmployeeBean();
+	public Employee getEmployee() {
+		return new Employee();
 	}
 	
 	@Override
@@ -36,7 +36,7 @@ public class EmployeeBean {
 		return "EmployeeBean [id=" + id + ", name=" + name + ", dept=" + dept + ", pay=" + pay + "]";
 	}
 
-	public EmployeeBean() {
+	public Employee() {
 		super();
 	}
 

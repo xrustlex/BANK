@@ -8,6 +8,7 @@ class SpringEmployeeManagmentApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
