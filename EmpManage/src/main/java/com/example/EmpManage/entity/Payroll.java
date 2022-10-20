@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="payrolls")
 public class Payroll {
 	
 	@Id
@@ -17,14 +17,14 @@ public class Payroll {
 	private long id;
 	private String name;
 	private int daysWorked;
-	private BigDecimal amount;
-	private BigDecimal taxPaid;
+	private double amount;
+	private double taxPaid;
 	
 	public Payroll() {
 		super();
 	}
 
-	public Payroll(long id, String name, int daysWorked, BigDecimal amount, BigDecimal taxPaid) {
+	public Payroll(long id, String name, int daysWorked, double amount, double taxPaid) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -57,19 +57,19 @@ public class Payroll {
 		this.daysWorked = daysWorked;
 	}
 
-	public BigDecimal getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(BigDecimal amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 
-	public BigDecimal getTaxPaid() {
+	public double getTaxPaid() {
 		return taxPaid;
 	}
 
-	public void setTaxPaid(BigDecimal taxPaid) {
+	public void setTaxPaid(double taxPaid) {
 		this.taxPaid = taxPaid;
 	}
 	
