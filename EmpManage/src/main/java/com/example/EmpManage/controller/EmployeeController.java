@@ -37,10 +37,10 @@ public class EmployeeController {
 	String deleteEmployee(@PathVariable("id")int id) {
 		try {
 			employeeRepo.deleteById(id);
-			return "DELETION SUCCESSFUL";
+			return "EMPLOYEE DELETION SUCCESSFUL";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "DELETION UNSUCCESSFUL";
+			return "EMPLOYEE DELETION UNSUCCESSFUL";
 		}
 	}
 

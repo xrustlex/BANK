@@ -3,7 +3,9 @@ package com.example.EmpManage.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,17 @@ public class ComplaintController {
 	@GetMapping("/getcomplaint") // End Point
 	List<Complaint> getAllComplaints() {
 		return complaintRepo.findAll();
+	}
+	
+	@DeleteMapping("/deletecomplaint/{id}")
+	String deleteComplaint(@PathVariable("id")long id) {
+		try {
+			complaintRepo.deleteById(id);
+			return "COMPLAINT DELETION SUCCESSFUL";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "COMPLAINT DELETION UNSUCCESSFUL";
+		}
 	}
 	
 }
