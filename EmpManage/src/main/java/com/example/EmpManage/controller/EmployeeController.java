@@ -33,7 +33,7 @@ public class EmployeeController {
 		return employeeRepo.findAll();
 	}
 
-	@DeleteMapping("/deleteemployee")
+	@DeleteMapping("/deleteemployee/{id}")
 	String deleteEmployee(@PathVariable("id")int id) {
 		try {
 			employeeRepo.deleteById(id);
