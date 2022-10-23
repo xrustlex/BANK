@@ -15,7 +15,7 @@ import com.cogent.shop.entity.Purchase;
 import com.cogent.shop.repo.PurchaseRepo;
 
 @RestController
-@RequestMapping("api/purchase")
+@RequestMapping("/api/purchase")
 public class PurchaseController {
 
 	@Autowired

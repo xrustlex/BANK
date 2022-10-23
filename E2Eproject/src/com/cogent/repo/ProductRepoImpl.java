@@ -9,11 +9,6 @@ import java.util.*;
 
 import com.cogent.bean.ProductBean;
 
-/**
- * @author dick
- *
- *         14 окт. 2022 г.
- */
 public class ProductRepoImpl implements ProductRepo {
 	
 	{

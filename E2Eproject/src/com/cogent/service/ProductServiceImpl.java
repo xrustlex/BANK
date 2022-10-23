@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.cogent.service;
 
 import java.util.List;
@@ -9,11 +7,6 @@ import com.cogent.bean.ProductBean;
 import com.cogent.repo.ProductRepo;
 import com.cogent.repo.ProductRepoImpl;
 
-/**
- * @author dick
- *
- * 14 окт. 2022 г.
- */
 public class ProductServiceImpl implements ProductService {
 
 	ProductRepo productrepo  = new ProductRepoImpl();

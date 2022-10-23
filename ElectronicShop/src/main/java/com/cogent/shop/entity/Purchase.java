@@ -15,8 +15,8 @@ import lombok.Data;
 @Table(name = "Purchases")
 //Entity class(Purchase) can have id, producNname, cost ,dateOfPurchase, deliveryDate, customerFeedback 
 @Data public class Purchase {
-	
-	@Id	
+
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String productName;
@@ -24,7 +24,7 @@ import lombok.Data;
 	private Date dateOfPurchase;
 	private Date deliveryDate;
 	private String customerFeedback;
-	
+
 	public Purchase() {
 		super();
 	}
@@ -87,5 +87,5 @@ import lombok.Data;
 	public void setCustomerFeedback(String customerFeedback) {
 		this.customerFeedback = customerFeedback;
 	}
-	
+
 }

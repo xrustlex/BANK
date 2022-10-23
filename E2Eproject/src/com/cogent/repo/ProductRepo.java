@@ -13,11 +13,7 @@ import com.cogent.bean.ProductBean;
  * 14 окт. 2022 г.
  */
 public interface ProductRepo {
-	/* 
-	 * operation--›addProduct, deleteProductById, deleteProductByCat,
-	 * operation--›findCheapestProductInCat, findProductByCat, findProductById 
-	 * operation--›updateProduct, findExpiredProducts
-	 */
+
 	public void addProduct(ProductBean product);
 	public void deleteById(long id);
 	public void deleteByCat(String cat);	
