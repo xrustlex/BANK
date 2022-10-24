@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cogent.shop.entity.Purchase;
 import com.cogent.shop.repo.PurchaseRepo;
 
-import lombok.val;
-import lombok.var;
-
 @RestController
 @RequestMapping("/api/purchase")
 public class PurchaseController {
