@@ -1,4 +1,4 @@
-package com.cogent.shop.controller;
+package com.cogent.assesment.controller;
 
 import java.util.List;
 
@@ -11,35 +11,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cogent.shop.entity.Purchase;
-import com.cogent.shop.repo.PurchaseRepo;
+import com.cogent.assesment.entity.Plan;
+import com.cogent.assesment.repo.PlanRepo;
 
 @RestController
-@RequestMapping("/api/purchase")
-public class PurchaseController {
+@RequestMapping("/api/plan")
+public class PlanController {
 
 	@Autowired
-	PurchaseRepo purchaseRepo;
+	PlanRepo planRepo;
 
 	@PostMapping("/add")
-	Purchase addPurchase(@RequestBody Purchase purchase) {
-		return purchaseRepo.save(purchase);
+	Plan addPlan(@RequestBody Plan plan) {
+		return planRepo.save(plan);
 	}
 
-	@GetMapping("/showAll")
-	List<Purchase> getAllPurchases() {
-		return purchaseRepo.findAll();
+	@GetMapping("showAll")
+	List<Plan> showAllPlans() {
+		return planRepo.findAll();
 	}
-
-	@DeleteMapping("/deletepurchase/{id}")
-	String deletePurchase(@PathVariable("id") long id) {
+	
+	@DeleteMapping("/deleteplan/{id}")
+	String deletePlan(@PathVariable("id") long id) {
 		try {
-			purchaseRepo.deleteById(id);
-			return "PURCHASE DELETION SUCCESSFUL";
+			planRepo.deleteById(id);
+			return "PLAN DELETION SUCCESSFUL";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "PURCHASE DELETION UNSUCCESSFUL";
+			return "PLAN DELETION UNSUCCESSFUL";
 		}
+		
 	}
-
 }

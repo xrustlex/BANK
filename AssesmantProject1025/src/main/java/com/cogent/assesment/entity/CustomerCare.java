@@ -1,4 +1,4 @@
-package com.cogent.assesment;
+package com.cogent.assesment.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
