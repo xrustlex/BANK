@@ -11,34 +11,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cogent.assesment.entity.Plan;
-import com.cogent.assesment.repo.PlanRepo;
+import com.cogent.assesment.entity.CustomerCare;
+import com.cogent.assesment.repo.CustomerCareRepo;
 
 @RestController
-@RequestMapping("/api/plan")
-public class PlanController {
+@RequestMapping("/api/customercare")
+public class CustomerCareController {
 
 	@Autowired
-	PlanRepo planRepo;
+	CustomerCareRepo customerCareRepo;
 
 	@PostMapping("/add")
-	Plan addPlan(@RequestBody Plan plan) {
-		return planRepo.save(plan);
+	CustomerCare addCustomerCare(@RequestBody CustomerCare customerCare) {
+		return customerCareRepo.save(customerCare);
 	}
 
 	@GetMapping("showAll")
-	List<Plan> showAllPlans() {
-		return planRepo.findAll();
+	List<	CustomerCare> showAllCustomerCare() {
+		return customerCareRepo.findAll();
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	String deletePlan(@PathVariable("id") long id) {
+	String deleteCustomerCare(@PathVariable("id") long id) {
 		try {
-			planRepo.deleteById(id);
-			return "PLAN DELETION SUCCESSFUL";
+			customerCareRepo.deleteById(id);
+			return "Customer Care DELETION SUCCESSFUL";
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "PLAN DELETION UNSUCCESSFUL";
+			return "Customer Care DELETION UNSUCCESSFUL";
 		}
 		
 	}
