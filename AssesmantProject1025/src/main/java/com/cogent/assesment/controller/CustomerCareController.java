@@ -26,7 +26,7 @@ public class CustomerCareController {
 		return customerCareRepo.save(customerCare);
 	}
 
-	@GetMapping("showAll")
+	@GetMapping("show")
 	List<	CustomerCare> showAllCustomerCare() {
 		return customerCareRepo.findAll();
 	}

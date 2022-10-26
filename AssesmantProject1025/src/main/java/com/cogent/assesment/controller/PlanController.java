@@ -3,10 +3,12 @@ package com.cogent.assesment.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +17,7 @@ import com.cogent.assesment.entity.Plan;
 import com.cogent.assesment.repo.PlanRepo;
 
 @RestController
-@RequestMapping("/api/plan")
+@RequestMapping("/api/plans")
 public class PlanController {
 
 	@Autowired
@@ -26,7 +28,7 @@ public class PlanController {
 		return planRepo.save(plan);
 	}
 
-	@GetMapping("showAll")
+	@GetMapping("show")
 	List<Plan> showAllPlans() {
 		return planRepo.findAll();
 	}
@@ -42,4 +44,18 @@ public class PlanController {
 		}
 		
 	}
+	
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Plan> updatePlan(@PathVariable long id,@RequestBody Plan planDetails) {
+		
+        Plan updatePlan = planRepo.findById(id).orElseThrow();
+        //updatePlan.setId(planDetails.getId());
+        updatePlan.setName(planDetails.getName());
+        updatePlan.setCost(planDetails.getCost());
+        updatePlan.setValidity(planDetails.getValidity());
+
+        planRepo.save(updatePlan);
+
+        return ResponseEntity.ok(updatePlan);
+    }
 }

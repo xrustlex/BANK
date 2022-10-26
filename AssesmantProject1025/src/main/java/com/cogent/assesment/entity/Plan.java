@@ -1,6 +1,8 @@
+
 package com.cogent.assesment.entity;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,13 +23,13 @@ public class Plan {
 	@Column(name="cost")
 	private BigDecimal cost;
 	@Column(name="validity")
-	private String validity;
+	private Date validity;
 	
 	public Plan() {
 		super();
 	}
 
-	public Plan(long id, String name, BigDecimal cost, String validity) {
+	public Plan(long id, String name, BigDecimal cost, Date validity) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -59,11 +61,11 @@ public class Plan {
 		this.cost = cost;
 	}
 
-	public String getValidity() {
+	public Date getValidity() {
 		return validity;
 	}
 
-	public void setValidity(String validity) {
+	public void setValidity(Date validity) {
 		this.validity = validity;
 	}
 
