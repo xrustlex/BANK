@@ -8,6 +8,7 @@ public class CapstoneBankingProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CapstoneBankingProjectApplication.class, args);
+		System.out.println("Welcome to CAPSTONE BANKING PROJECT");
 	}
 
 }
