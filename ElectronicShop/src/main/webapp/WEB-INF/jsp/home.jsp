@@ -1,7 +1,0 @@
-<center>
-<h1>WELCOME TO MOTHER RUSSIA</h1>
-<h1>DRINK WOLF MILK AND WATCH CARTOONS</h1>
-<H1>SHOE AND SHOE LACE</H1>
-<H1>ONE IS MEANINGLESS WITHOUT ANOTHER</H1>
-<a href="/logout">logout</a><br><br>
-</center>

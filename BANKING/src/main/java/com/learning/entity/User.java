@@ -13,6 +13,7 @@ public class User {
  * phone: String,
  * SSN: int,
  * password: String 
+ * role: enum RoleType (CUSTOMER, STAFF, ADMIN)
  */
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -9,12 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
 @Table(name = "Purchases")
 //Entity class(Purchase) can have id, producNname, cost ,dateOfPurchase, deliveryDate, customerFeedback 
-@Data public class Purchase {
+public class Purchase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

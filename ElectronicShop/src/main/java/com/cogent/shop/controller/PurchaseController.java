@@ -26,12 +26,12 @@ public class PurchaseController {
 		return purchaseRepo.save(purchase);
 	}
 
-	@GetMapping("/showAll")
+	@GetMapping("/get")
 	List<Purchase> getAllPurchases() {
 		return purchaseRepo.findAll();
 	}
 
-	@DeleteMapping("/deletepurchase/{id}")
+	@DeleteMapping("/delete/{id}")
 	String deletePurchase(@PathVariable("id") long id) {
 		try {
 			purchaseRepo.deleteById(id);
