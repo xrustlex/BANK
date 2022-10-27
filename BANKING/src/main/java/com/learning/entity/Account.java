@@ -10,6 +10,7 @@ import javax.persistence.*;
 public class Account {
 /*
  * accountType: enum (SAVINGS/CHECKING),
+ * accountStatus: enum (ENABLED, DISABLED),
  * accountBalance: Number,
  * approved: no,
  * accountNumber: Number,
