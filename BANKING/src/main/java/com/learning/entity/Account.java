@@ -9,20 +9,25 @@ import javax.persistence.*;
 @Table(name="ACCOUNTS")
 public class Account {
 /*
- * accountType: enum(SB/CA),
+ * accountType: enum (SAVINGS/CHECKING),
  * accountBalance: Number,
  * approved: no,
  * accountNumber: Number,
  * dateOfCreation: date/time,
  * customerId: Number
  */
+	@Column(name="account_type")
+	private AccountType accountType;
+	@Column(name="account_balance")
+	private BigDecimal accountBalance;
+	@Column(name="approved")
+	private boolean approved;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private AccountType accountType;
-	private BigDecimal accountBalance;
-	private boolean approved;
 	private long accountNumber;
+	@Column(name="creation_date")
 	private Date dateOfCreation;
+	@Column(name="customer_id")
 	private long customerId;
 	
 	public Account() {
