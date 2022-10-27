@@ -1,4 +1,4 @@
-package com.learning.CapstoneBankingProject;
+package com.learning;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,6 @@ public class CapstoneBankingProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CapstoneBankingProjectApplication.class, args);
-		System.out.println("Welcome to CAPSTONE BANKING PROJECT");
 	}
 
 }
