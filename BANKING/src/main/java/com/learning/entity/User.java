@@ -10,6 +10,8 @@ public class User {
  * id: Number,
  * username:String,
  * fullname:String,
+ * phone: String,
+ * SSN: int,
  * password: String 
  */
 	@Id
@@ -19,6 +21,10 @@ public class User {
 	private String username;
 	@Column(name="full_name")
 	private String fullName;
+	@Column(name="phone")
+	private String phone;
+	@Column(name="ssn")
+	private int ssn;
 	@Column(name="password")
 	private String password;
 	
